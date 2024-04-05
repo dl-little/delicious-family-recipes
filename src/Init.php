@@ -17,9 +17,10 @@ class Init {
 
 	/**
 	 * CSS_Vars instance.
+	 *
 	 * @var ?CSS_Vars
 	 */
-	public static $css_vars;
+	public $css_vars;
 
 	/**
 	 * Instantiate class and load subclasses.

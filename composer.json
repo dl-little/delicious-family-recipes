@@ -1,0 +1,13 @@
+{
+	"name": "doug/delicious-family-recipes",
+	"config": {
+		"vendor-dir": "lib",
+		"optimize-autoloader": true
+	},
+	"autoload": {
+		"psr-4": {
+			"DFR\\": "src/"
+		}
+	},
+	"require": {}
+}

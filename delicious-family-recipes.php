@@ -18,6 +18,11 @@ if (
 	exit( 'This plugin requires WordPress' );
 }
 
-require_once( plugin_dir_path(__FILE__) . '/vendor/autoload.php');
+// Ensure autoload map exists.
+if ( ! file_exists( plugin_dir_path(__FILE__) . 'lib/autoload.php' ) ) {
+	exit( 'Installation is messssed up.' );
+}
+
+require_once( plugin_dir_path(__FILE__) . 'lib/autoload.php' );
 
 Init::get_instance();
