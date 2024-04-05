@@ -8,6 +8,9 @@ namespace DFR;
  * @package Delicious_Family_Recipes
  */
 class Init {
+
+	use DFR_Shared_Properties;
+
 	/**
 	 * Class instance.
 	 *
@@ -23,6 +26,13 @@ class Init {
 	public $css_vars;
 
 	/**
+	 * Admin instance.
+	 *
+	 * @var ?Admin
+	 */
+	public $admin;
+
+	/**
 	 * Instantiate class and load subclasses.
 	 *
 	 * @return object class.
@@ -33,6 +43,7 @@ class Init {
 
 			// Load classes.
 			self::$instance->css_vars = CSS_Vars::get_instance();
+			self::$instance->admin    = Admin::get_instance();
 		}
 
 		return self::$instance;

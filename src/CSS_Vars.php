@@ -9,6 +9,9 @@ if ( class_exists( 'DFR\Init' ) ) {
 	 * @package Delicious_Family_Recipes
 	 */
 	class CSS_Vars extends Init {
+
+		use DFR_Shared_Properties;
+
 		/**
 		 * Class instance.
 		 *
@@ -34,7 +37,6 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * Actions on class instantiation.
 		 */
 		public function init(): void {
-			error_log('asd');
 		}
 	}
 }

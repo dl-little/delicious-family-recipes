@@ -23,6 +23,10 @@ if ( ! file_exists( plugin_dir_path(__FILE__) . 'lib/autoload.php' ) ) {
 	exit( 'Installation is messssed up.' );
 }
 
+if ( ! defined('DFR_DIR') ) {
+	define( 'DFR_DIR', __DIR__ );
+}
+
 require_once( plugin_dir_path(__FILE__) . 'lib/autoload.php' );
 
 Init::get_instance();
