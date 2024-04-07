@@ -22,7 +22,10 @@ class ComposerStaticInit9f2c1550fee16e6a91a75432d3e5bdae
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'DFR\\Admin' => __DIR__ . '/../..' . '/src/Admin.php',
         'DFR\\CSS_Vars' => __DIR__ . '/../..' . '/src/CSS_Vars.php',
+        'DFR\\DFR_Shared_Properties' => __DIR__ . '/../..' . '/src/DFR_Shared_Properties.php',
+        'DFR\\Fonts' => __DIR__ . '/../..' . '/src/Fonts.php',
         'DFR\\Init' => __DIR__ . '/../..' . '/src/Init.php',
     );
 

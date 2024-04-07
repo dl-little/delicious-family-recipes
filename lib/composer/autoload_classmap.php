@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'DFR\\Admin' => $baseDir . '/src/Admin.php',
     'DFR\\CSS_Vars' => $baseDir . '/src/CSS_Vars.php',
+    'DFR\\DFR_Shared_Properties' => $baseDir . '/src/DFR_Shared_Properties.php',
+    'DFR\\Fonts' => $baseDir . '/src/Fonts.php',
     'DFR\\Init' => $baseDir . '/src/Init.php',
 );

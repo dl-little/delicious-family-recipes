@@ -26,6 +26,13 @@ class Init {
 	public $css_vars;
 
 	/**
+	 * Fonts instance.
+	 *
+	 * @var ?Fonts
+	 */
+	public $fonts;
+
+	/**
 	 * Admin instance.
 	 *
 	 * @var ?Admin
@@ -44,6 +51,7 @@ class Init {
 			// Load classes.
 			self::$instance->css_vars = CSS_Vars::get_instance();
 			self::$instance->admin    = Admin::get_instance();
+			self::$instance->fonts    = Fonts::get_instance();
 		}
 
 		return self::$instance;

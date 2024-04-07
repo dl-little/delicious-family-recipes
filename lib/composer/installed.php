@@ -3,7 +3,7 @@
         'name' => 'doug/delicious-family-recipes',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b17e28712e2ea8de4a40fded459bc06cd56436a5',
+        'reference' => '35f907551c51363e76c6d2916ec78c19d8424850',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'doug/delicious-family-recipes' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b17e28712e2ea8de4a40fded459bc06cd56436a5',
+            'reference' => '35f907551c51363e76c6d2916ec78c19d8424850',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

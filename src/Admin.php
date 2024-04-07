@@ -91,7 +91,9 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public function register_admin_settings(): void {
 			$sections = [
 				'display' => [
-					'body_font_size'
+					'body_font_family',
+					'body_font_size',
+					'header_font_family'
 				]
 			];
 
