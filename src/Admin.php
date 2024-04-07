@@ -66,7 +66,8 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		public function init(): void {
 			add_action( 'admin_menu', [ $this, 'add_admin_page_to_appearance_menu' ] );
-			add_action( 'admin_menu', [ $this, 'register_admin_settings' ], 20 );
+			add_action( 'admin_init', [ $this, 'register_admin_settings' ] );
+			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts'] );
 		}
 
 		/**
@@ -78,15 +79,48 @@ if ( class_exists( 'DFR\Init' ) ) {
 				'DFR Settings',
 				'edit_theme_options',
 				$this->page_slug,
-				[ $this, 'render_menu_page' ]
+				function() {
+					$this->render_template( 'page' );
+				}
 			);
 		}
 
 		/**
-		 * Creates the layout of the settings page.
+		 * Registers the settings for the admin page.
 		 */
-		public function render_menu_page(): void {
-			$this->render_template('page');
+		public function register_admin_settings(): void {
+			$sections = [
+				'display' => [
+					'body_font_size'
+				]
+			];
+
+			foreach( $sections as $section => $fields ) {
+
+				add_settings_section(
+					self::$slug . '-' . $section,
+					ucwords( $section ),
+					function() use ( $section ) {
+						$this->render_template( $section );
+					},
+					$this->page_slug
+				);
+
+				foreach( $fields as $field ) {
+
+					register_setting( $this->page_slug, self::$prefix . $field );
+
+					add_settings_field(
+						self::$slug . '-' . $field,
+						str_replace( '_', ' ', ucwords( $field, '_' ) ),
+						function() use ( $field ) {
+							$this->render_template( $field );
+						},
+						$this->page_slug,
+						self::$slug . '-' . $section
+					);
+				}
+			}
 		}
 
 		/**
@@ -100,57 +134,20 @@ if ( class_exists( 'DFR\Init' ) ) {
 			if ( ! is_readable( $path ) ) {
 				return;
 			}
-	
+
 			include $path;
 		}
 
 		/**
-		 * Registers the settings for the admin page.
+		 * Enqueues the stylesheet and javascript for the dfr admin.
 		 */
-		public function register_admin_settings(): void {
-			$sections = [
-				'display' => [
-					'font_size' => 'number',
-				],
-				'optimization' => [
-					'minification' => 'number'
-				]
-			];
-
-			// NOT WORKING - MAYBE USE DYNAMIC METHOD NAME INSTEAD OF CLOSURE.
-
-			foreach( $sections as $section => $fields ) {
-				$this->section = $section;
-
-				add_settings_section(
-					self::$slug . '-' . $this->section,
-					strtoupper( $this->section ),
-					[ $this, 'render_section' ],
-					$this->page_slug
-				);
-
-				foreach( $fields as $field => $type ) {
-					$this->field = $field;
-
-					register_setting( $this->page_slug, self::$prefix . $this->field );
-					add_settings_field(
-						self::$slug . '-' . $this->field,
-						$this->field,
-						function() use ( $type ) {
-							$this->render_template( $type );
-						},
-						$this->page_slug,
-						self::$slug . '-' . $this->section
-					);
-				}
+		public function admin_enqueue_scripts(): void {
+			// Early return if we're not on our admin page.
+			if ( get_current_screen()->base !== 'appearance_page_'. $this->page_slug ) {
+				return;
 			}
-		}
 
-		/**
-		 * Renders a settings section.
-		 */
-		public function render_section(): void {
-			$this->render_template( 'section' );
+			wp_enqueue_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . '/assets/dist/adminStyles.css' );
 		}
 	}
 }

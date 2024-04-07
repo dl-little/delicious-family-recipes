@@ -15,7 +15,7 @@ if (
 	! defined( 'ABSPATH' )
 	|| !function_exists( 'add_action' )
 ) {
-	exit( 'This plugin requires WordPress' );
+	exit( 'This plugin requires WordPress.' );
 }
 
 // Ensure autoload map exists.
@@ -27,6 +27,10 @@ if ( ! defined('DFR_DIR') ) {
 	define( 'DFR_DIR', __DIR__ );
 }
 
-require_once( plugin_dir_path(__FILE__) . 'lib/autoload.php' );
+if ( ! defined( 'DFR_PLUGIN_URL' ) ) {
+	define( 'DFR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+}
+
+require_once( plugin_dir_path( __FILE__ ) . 'lib/autoload.php' );
 
 Init::get_instance();

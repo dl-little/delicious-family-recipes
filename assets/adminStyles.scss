@@ -1,0 +1,16 @@
+td:has(
+  input[type="number"][name*="font_size"]
+) {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: calc( 50% - 7.5px );
+    padding-left: 2.25px;
+    content: 'px';
+  }
+}
+
+input[type="number"][name*="font_size"] {
+  max-width: calc( 30px + 2em );
+}

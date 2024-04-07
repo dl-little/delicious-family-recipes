@@ -9,5 +9,9 @@
 			"DFR\\": "src/"
 		}
 	},
+	"scripts": {
+		"build-admin-styles": "sass ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
+		"watch-admin-styles": "sass --watch ./assets/adminStyles.scss ./assets/dist/adminStyles.css"
+	},
 	"require": {}
 }
