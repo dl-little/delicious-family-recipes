@@ -89,13 +89,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * Registers the settings for the admin page.
 		 */
 		public function register_admin_settings(): void {
-			$sections = [
-				'display' => [
-					'body_font_family',
-					'body_font_size',
-					'header_font_family'
-				]
-			];
+			$sections = self::get_settings();
 
 			foreach( $sections as $section => $fields ) {
 
@@ -150,6 +144,21 @@ if ( class_exists( 'DFR\Init' ) ) {
 			}
 
 			wp_enqueue_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . '/assets/dist/adminStyles.css' );
+		}
+
+		/**
+		 * Returns an array of all settings in Admin page.
+		 *
+		 * @return array
+		 */
+		public static function get_settings(): array {
+			return [
+				'display' => [
+					'body_font_size',
+					'body_font_family',
+					'header_font_family'
+				]
+			];
 		}
 	}
 }

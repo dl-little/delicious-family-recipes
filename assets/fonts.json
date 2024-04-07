@@ -1,84 +1,84 @@
 {
-    "fontFamilies": [
-        {
-            "fontFamily": "Arial,'Helvetica Neue',Helvetica,sans-serif",
-            "name": "Arial (Web Safe)"
-        },
-        {
-            "fontFamily":"Baskerville,'Baskerville Old Face','Hoefler Text',Garamond,'Times New Roman',serif",
-            "name": "Baskerville (Web Safe)"
-        },
-        {
-            "fontFamily": "'Book Antiqua',Palatino,'Palatino Linotype','Palatino LT STD',Georgia,serif",
-            "name": "Book Antiqua (Web Safe)"
-        },
-        {
-            "fontFamily": "Calibri,Candara,Segoe,'Segoe UI',Optima,Arial,sans-serif",
-            "name": "Calibri (Web Safe)"
-        },
-        {
-            "fontFamily": "Cambria,Georgia,serif",
-            "name": "Cambria (Web Safe)"
-        },
-        {
-            "fontFamily": "'Century Gothic',CenturyGothic,AppleGothic,sans-serif",
-            "name": "Century Gothic (Web Safe)"
-        },
-        {
-            "fontFamily": "Constantia,'Lucida Bright',Lucidabright,'Lucida Serif',Lucida,'DejaVu Serif','Bitstream Vera Serif','Liberation Serif',Georgia,serif",
-            "name": "Constantia (Web Safe)"
-        },
-        {
-            "fontFamily": "'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace",
-            "name": "Courier New (Web Safe)"
-        },
-        {
-            "fontFamily": "'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif",
-            "name": "Franklin Gothic (Web Safe)"
-        },
-        {
-            "fontFamily": "Futura,'Trebuchet MS',Arial,sans-serif",
-            "name": "Futura (Web Safe)"
-        },
-        {
-            "fontFamily": "Garamond,Baskerville,'Baskerville Old Face','Hoefler Text','Times New Roman',serif",
-            "name": "Garamond (Web Safe)"
-        },
-        {
-            "fontFamily": "Georgia,Times,'Times New Roman',serif",
-            "name": "Georgia (Web Safe)"
-        },
-        {
-            "fontFamily": "'Gill Sans','Gill Sans MT',Calibri,sans-serif",
-            "name": "Gill Sans (Web Safe)"
-        },
-        {
-            "fontFamily": "'Lucida Bright',Georgia,serif",
-            "name": "Lucida Bright (Web Safe)"
-        },
-        {
-            "fontFamily": "Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif",
-            "name": "Palatino (Web Safe)"
-        },
-        {
-            "fontFamily": "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-            "name": "System Font"
-        },
-        {
-            "fontFamily": "Tahoma,Verdana,Segoe,sans-serif",
-            "name": "Tahoma (Web Safe)"
-        },
-        {
-            "fontFamily": "TimesNewRoman',Times New Roman',Times,Baskerville,Georgia,serif",
-            "name": "Times New Roman (Web Safe)"
-        },
-        {
-            "fontFamily": "'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif",
-            "name": "Trebuchet (Web Safe)"
-        },
-        {
-            "fontFamily": "Verdana,Geneva,sans-serif",
-            "name": "Verdana (Web Safe)"
-        }
-    ]
+	"fontFamilies": [
+		{
+			"fontFamily": "Arial,'Helvetica Neue',Helvetica,sans-serif",
+			"name": "Arial (Web Safe)"
+		},
+		{
+			"fontFamily":"Baskerville,'Baskerville Old Face','Hoefler Text',Garamond,'Times New Roman',serif",
+			"name": "Baskerville (Web Safe)"
+		},
+		{
+			"fontFamily": "'Book Antiqua',Palatino,'Palatino Linotype','Palatino LT STD',Georgia,serif",
+			"name": "Book Antiqua (Web Safe)"
+		},
+		{
+			"fontFamily": "Calibri,Candara,Segoe,'Segoe UI',Optima,Arial,sans-serif",
+			"name": "Calibri (Web Safe)"
+		},
+		{
+			"fontFamily": "Cambria,Georgia,serif",
+			"name": "Cambria (Web Safe)"
+		},
+		{
+			"fontFamily": "'Century Gothic',CenturyGothic,AppleGothic,sans-serif",
+			"name": "Century Gothic (Web Safe)"
+		},
+		{
+			"fontFamily": "Constantia,'Lucida Bright',Lucidabright,'Lucida Serif',Lucida,'DejaVu Serif','Bitstream Vera Serif','Liberation Serif',Georgia,serif",
+			"name": "Constantia (Web Safe)"
+		},
+		{
+			"fontFamily": "'Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace",
+			"name": "Courier New (Web Safe)"
+		},
+		{
+			"fontFamily": "'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif",
+			"name": "Franklin Gothic (Web Safe)"
+		},
+		{
+			"fontFamily": "Futura,'Trebuchet MS',Arial,sans-serif",
+			"name": "Futura (Web Safe)"
+		},
+		{
+			"fontFamily": "Garamond,Baskerville,'Baskerville Old Face','Hoefler Text','Times New Roman',serif",
+			"name": "Garamond (Web Safe)"
+		},
+		{
+			"fontFamily": "Georgia,Times,'Times New Roman',serif",
+			"name": "Georgia (Web Safe)"
+		},
+		{
+			"fontFamily": "'Gill Sans','Gill Sans MT',Calibri,sans-serif",
+			"name": "Gill Sans (Web Safe)"
+		},
+		{
+			"fontFamily": "'Lucida Bright',Georgia,serif",
+			"name": "Lucida Bright (Web Safe)"
+		},
+		{
+			"fontFamily": "Palatino,'Palatino Linotype','Palatino LT STD','Book Antiqua',Georgia,serif",
+			"name": "Palatino (Web Safe)"
+		},
+		{
+			"fontFamily": "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+			"name": "System Font"
+		},
+		{
+			"fontFamily": "Tahoma,Verdana,Segoe,sans-serif",
+			"name": "Tahoma (Web Safe)"
+		},
+		{
+			"fontFamily": "TimesNewRoman',Times New Roman',Times,Baskerville,Georgia,serif",
+			"name": "Times New Roman (Web Safe)"
+		},
+		{
+			"fontFamily": "'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif",
+			"name": "Trebuchet (Web Safe)"
+		},
+		{
+			"fontFamily": "Verdana,Geneva,sans-serif",
+			"name": "Verdana (Web Safe)"
+		}
+	]
 }
