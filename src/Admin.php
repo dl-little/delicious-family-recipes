@@ -34,18 +34,11 @@ if ( class_exists( 'DFR\Init' ) ) {
 		private $template_path = DFR_DIR . '/templates';
 
 		/**
-		 * Current Field.
+		 * Admin settings.
 		 *
-		 * @var ?string
+		 * @var ?array
 		 */
-		public $field = null;
-
-		/**
-		 * Current Section.
-		 *
-		 * @var ?string
-		 */
-		public $section = null;
+		public static $settings = null;
 
 		/**
 		 * Instantiate class and load subclasses.
@@ -68,6 +61,24 @@ if ( class_exists( 'DFR\Init' ) ) {
 			add_action( 'admin_menu', [ $this, 'add_admin_page_to_appearance_menu' ] );
 			add_action( 'admin_init', [ $this, 'register_admin_settings' ] );
 			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts'] );
+
+			self::$settings = [
+				'display' => [
+					'use_display_settings' => [
+						'create_var' => false
+					],
+					'body_font_family' => [
+						'create_var' => true
+					],
+					'body_font_size' => [
+						'create_var' => true,
+						'unit' => 'px'
+					],
+					'header_font_family' => [
+						'create_var' => true
+					]
+				]
+			];
 		}
 
 		/**
@@ -102,7 +113,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 					$this->page_slug
 				);
 
-				foreach( $fields as $field ) {
+				foreach( $fields as $field => $args ) {
 
 					register_setting( $this->page_slug, self::$prefix . $field );
 
@@ -120,9 +131,9 @@ if ( class_exists( 'DFR\Init' ) ) {
 		}
 
 		/**
-		 * Renders a template given its slug.
+		 * Renders a php template given its slug.
 		 *
-		 * @var string $template_slug
+		 * @param string $template_slug
 		 */
 		private function render_template( $template_slug ): void {
 			$path = $this->template_path . '/' . $template_slug . '.php';
@@ -143,22 +154,37 @@ if ( class_exists( 'DFR\Init' ) ) {
 				return;
 			}
 
-			wp_enqueue_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . '/assets/dist/adminStyles.css' );
+			wp_register_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . '/assets/dist/adminStyles.css' );
+			wp_enqueue_style( self::$prefix . 'admin_styles' );
+			
+			wp_register_script( self::$prefix . 'admin_script', DFR_PLUGIN_URL . '/assets/dist/adminScript.js', [], false, true );
+			wp_enqueue_script( self::$prefix . 'admin_script' );
 		}
 
 		/**
-		 * Returns an array of all settings in Admin page.
+		 * Returns an array of settings in Admin page.
 		 *
+		 * @param ?string $type The type of setting to grab from array. Default is all.
+		 * 
 		 * @return array
 		 */
-		public static function get_settings(): array {
-			return [
-				'display' => [
-					'body_font_size',
-					'body_font_family',
-					'header_font_family'
-				]
-			];
+		public static function get_settings( $type = '' ): array {
+			if ( empty( $type ) ) {
+				return self::$settings;
+			}
+
+			if ( array_key_exists( $type, self::$settings ) ) {
+				return self::$settings[ $type ];
+			}
+		}
+
+		/**
+		 * Prepends the site prefix to get_option calls.
+		 *
+		 * @param string $option_slug
+		 */
+		public static function get_option( $option_slug ): mixed {
+			return get_option( self::$prefix . $option_slug );
 		}
 	}
 }

@@ -7,7 +7,7 @@
 			<option
 				value="<?php echo $font['fontFamily']; ?>"
 				<?php
-					if ( get_option( self::$prefix . 'header_font_family' ) === $font['fontFamily'] ) {
+					if ( DFR\Admin::get_option( 'header_font_family' ) === $font['fontFamily'] ) {
 						echo 'selected';
 					}
 				?>

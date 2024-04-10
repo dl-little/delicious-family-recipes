@@ -7,7 +7,7 @@
 			<option
 				value="<?php echo $font['fontFamily']; ?>"
 				<?php
-					if ( get_option( self::$prefix . 'body_font_family' ) === $font['fontFamily'] ) {
+					if ( DFR\Admin::get_option( 'body_font_family' ) === $font['fontFamily'] ) {
 						echo 'selected';
 					}
 				?>
