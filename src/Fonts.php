@@ -27,7 +27,7 @@ if ( class_exists( 'DFR\Init' ) ) {
         public static $font_families = null;
 
 		/**
-		 * Instantiate class and load subclasses.
+		 * Instantiate class.
 		 *
 		 * @return object class.
 		 */

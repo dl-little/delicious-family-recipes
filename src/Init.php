@@ -40,6 +40,13 @@ class Init {
 	public $admin;
 
 	/**
+	 * Enqueue instance.
+	 *
+	 * @var ?Enqueue
+	 */
+	public $enqueue;
+
+	/**
 	 * Instantiate class and load subclasses.
 	 *
 	 * @return object class.
@@ -52,6 +59,7 @@ class Init {
 			self::$instance->css_vars = CSS_Vars::get_instance();
 			self::$instance->admin    = Admin::get_instance();
 			self::$instance->fonts    = Fonts::get_instance();
+			self::$instance->enqueue  = Enqueue::get_instance();
 		}
 
 		return self::$instance;

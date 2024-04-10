@@ -1,0 +1,10 @@
+body {
+  font-size: var(--dfr-body-font-size, 18px);
+  font-family: var(--dfr-body-font-family, -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif);
+}
+
+@for $i from 1 through 6 {
+  h#{$i}, h#{$i}.wp-block-post-title {
+    font-family: var(--dfr-header-font-family, -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif);
+  }
+}

@@ -69,10 +69,6 @@
 			"name": "Tahoma (Web Safe)"
 		},
 		{
-			"fontFamily": "TimesNewRoman',Times New Roman',Times,Baskerville,Georgia,serif",
-			"name": "Times New Roman (Web Safe)"
-		},
-		{
 			"fontFamily": "'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif",
 			"name": "Trebuchet (Web Safe)"
 		},
