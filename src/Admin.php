@@ -80,6 +80,22 @@ if ( class_exists( 'DFR\Init' ) ) {
 					'header_font_family' => [
 						'default' => "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
 						'create_var' => true
+					],
+					'primary_color' => [
+						'default' => '#113946',
+						'create_var' => true
+					],
+					'secondary_color' => [
+						'default' => '#BCA37F',
+						'create_var' => true
+					],
+					'accent_color' => [
+						'default' => '#EAD7BB',
+						'create_var' => true
+					],
+					'tertiary_color' => [
+						'default' => '#FFF2D8',
+						'create_var' => true
 					]
 				]
 			];
@@ -163,6 +179,9 @@ if ( class_exists( 'DFR\Init' ) ) {
 			
 			wp_register_script( self::$prefix . 'admin_script', DFR_PLUGIN_URL . '/assets/dist/adminScript.js', [], false, true );
 			wp_enqueue_script( self::$prefix . 'admin_script' );
+
+			wp_enqueue_style( 'wp-color-picker' );
+    		wp_enqueue_script( self::$prefix . 'color_picker', DFR_PLUGIN_URL . '/assets/dist/colorPicker.js', array( 'wp-color-picker' ), false, true );
 		}
 
 		/**
