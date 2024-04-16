@@ -65,16 +65,20 @@ if ( class_exists( 'DFR\Init' ) ) {
 			self::$settings = [
 				'display' => [
 					'use_display_settings' => [
+						'default' => true,
 						'create_var' => false
 					],
 					'body_font_family' => [
+						'default' => "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
 						'create_var' => true
 					],
 					'body_font_size' => [
+						'default' => '18',
 						'unit' => 'px',
 						'create_var' => true
 					],
 					'header_font_family' => [
+						'default' => "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
 						'create_var' => true
 					]
 				]

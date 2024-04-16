@@ -45,7 +45,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * Checks if display settings are enabled.
 		 */
 		public static function display_settings_enabled(): bool {
-			return (bool) Admin::get_option( 'use_display_settings' );
+			return (bool) Admin::get_option( 'use_display_settings', true );
 		}
 
 		/**
@@ -81,7 +81,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 					continue;
 				}
 
-				$custom_css .= self::create_css_variable( $setting );
+				$custom_css .= self::create_css_variable( $setting, $options['default'] );
 
 				if ( ! empty( $options['unit'] ) ) {
 					$custom_css .= $options['unit'];
@@ -102,8 +102,8 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 *
 		 * @return string The option turned into a css variable, where '--option-slug: value;'
 		 */
-		public static function create_css_variable( $option_slug ): string {
-			return '--' . str_replace( '_', '-', self::$prefix . $option_slug ) . ':' . ' ' . Admin::get_option( $option_slug );
+		public static function create_css_variable( $option_slug, $default ): string {
+			return '--' . str_replace( '_', '-', self::$prefix . $option_slug ) . ':' . ' ' . Admin::get_option( $option_slug, $default );
 		}
 	}
 }

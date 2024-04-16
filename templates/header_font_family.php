@@ -7,7 +7,7 @@
 			<option
 				value="<?php echo $font['fontFamily']; ?>"
 				<?php
-					if ( DFR\Admin::get_option( 'header_font_family' ) === $font['fontFamily'] ) {
+					if ( DFR\Admin::get_option( 'header_font_family', "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif" ) === $font['fontFamily'] ) {
 						echo 'selected';
 					}
 				?>
