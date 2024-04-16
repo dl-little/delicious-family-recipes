@@ -13,7 +13,14 @@
 		"build-admin-styles": "sass ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
 		"watch-admin-styles": "sass --watch ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
 		"watch-main-styles": "sass --watch ./assets/main.scss ./assets/dist/main.css",
-		"build-main-styles": "sass ./assets/main.scss ./assets/dist/main.css"
+		"build-main-styles": "sass ./assets/main.scss ./assets/dist/main.css",
+		"build": [
+			"sass ./assets/main.scss ./assets/dist/main.css",
+			"sass ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
+			"rm -rf build",
+			"mkdir -p 'build'",
+			"zip -r build/delicious-family-recipes.zip . -x '*.lock' -x '*.md' -x '*.scss' -x '*.gitignore' -x './build/'"
+		]
 	},
 	"require": {}
 }

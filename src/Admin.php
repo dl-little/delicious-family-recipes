@@ -181,8 +181,8 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 *
 		 * @param string $option_slug
 		 */
-		public static function get_option( $option_slug ): mixed {
-			return get_option( self::$prefix . $option_slug );
+		public static function get_option( $option_slug, $default = false ): mixed {
+			return get_option( self::$prefix . $option_slug, $default );
 		}
 	}
 }
