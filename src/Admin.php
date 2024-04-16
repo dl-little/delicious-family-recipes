@@ -71,8 +71,8 @@ if ( class_exists( 'DFR\Init' ) ) {
 						'create_var' => true
 					],
 					'body_font_size' => [
-						'create_var' => true,
-						'unit' => 'px'
+						'unit' => 'px',
+						'create_var' => true
 					],
 					'header_font_family' => [
 						'create_var' => true
@@ -169,13 +169,11 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * @return array
 		 */
 		public static function get_settings( $type = '' ): array {
-			if ( empty( $type ) ) {
-				return self::$settings;
+			if ( ! empty( $type ) && array_key_exists( $type, self::$settings ) ) {
+				return self::$settings[$type];
 			}
 
-			if ( array_key_exists( $type, self::$settings ) ) {
-				return self::$settings[ $type ];
-			}
+			return self::$settings;
 		}
 
 		/**
