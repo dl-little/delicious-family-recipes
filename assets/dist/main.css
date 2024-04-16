@@ -3,28 +3,34 @@ body {
   font-family: var(--dfr-body-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 }
 
-h1, h1.wp-block-post-title {
+h1, h1.wp-block-post-title, h1.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-size: 2.25em;
 }
 
-h2, h2.wp-block-post-title {
+h2, h2.wp-block-post-title, h2.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-size: 2em;
 }
 
-h3, h3.wp-block-post-title {
+h3, h3.wp-block-post-title, h3.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-size: 1.75em;
 }
 
-h4, h4.wp-block-post-title {
+h4, h4.wp-block-post-title, h4.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-size: 1.5em;
 }
 
-h5, h5.wp-block-post-title {
+h5, h5.wp-block-post-title, h5.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-size: 1.25em;
 }
 
-h6, h6.wp-block-post-title {
+h6, h6.wp-block-post-title, h6.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  font-size: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */

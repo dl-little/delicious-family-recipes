@@ -1,3 +1,7 @@
+.notice {
+  max-width: fit-content;
+}
+
 td:has(input[type=number][name*=font_size]) {
   position: relative;
 }
