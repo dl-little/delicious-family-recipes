@@ -167,10 +167,15 @@ if ( class_exists( 'DFR\Init' ) ) {
 
 		/**
 		 * Enqueues the stylesheet and javascript for the dfr admin.
+		 *
+		 * @param $hook_suffix The admin page suffix.
 		 */
-		public function admin_enqueue_scripts(): void {
+		public function admin_enqueue_scripts( $hook_suffix ): void {
 			// Early return if we're not on our admin page.
-			if ( get_current_screen()->base !== 'appearance_page_'. $this->page_slug ) {
+			if (
+				get_current_screen()->base !== 'appearance_page_'. $this->page_slug
+				&& $hook_suffix !== 'term.php'
+			) {
 				return;
 			}
 
@@ -206,6 +211,15 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		public static function get_option( $option_slug, $default = false ): mixed {
 			return get_option( self::$prefix . $option_slug, $default );
+		}
+
+		/**
+		 * Prepends the site prefix to update_option calls.
+		 *
+		 * @param string $option_slug
+		 */
+		public static function update_option( $option_slug, $value ): mixed {
+			return update_option( self::$prefix . $option_slug, $value );
 		}
 	}
 }

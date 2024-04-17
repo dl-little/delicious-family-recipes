@@ -7,30 +7,72 @@ h1, h1.wp-block-post-title, h1.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 2.25em;
 }
+h1, h1 > *, h1.wp-block-post-title, h1.wp-block-post-title > *, h1.entry-title, h1.entry-title > * {
+  color: var(--dfr-primary-color, "#113946");
+  transition: color 0.2s ease-in-out;
+}
+h1:hover:has(a), h1:hover:has(a) > *, h1:focus:has(a), h1:focus:has(a) > *, h1:focus-within:has(a), h1:focus-within:has(a) > *, h1.wp-block-post-title:hover:has(a), h1.wp-block-post-title:hover:has(a) > *, h1.wp-block-post-title:focus:has(a), h1.wp-block-post-title:focus:has(a) > *, h1.wp-block-post-title:focus-within:has(a), h1.wp-block-post-title:focus-within:has(a) > *, h1.entry-title:hover:has(a), h1.entry-title:hover:has(a) > *, h1.entry-title:focus:has(a), h1.entry-title:focus:has(a) > *, h1.entry-title:focus-within:has(a), h1.entry-title:focus-within:has(a) > * {
+  color: var(--dfr-secondary-color, "#BCA37F");
+}
 
 h2, h2.wp-block-post-title, h2.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 2em;
+}
+h2, h2 > *, h2.wp-block-post-title, h2.wp-block-post-title > *, h2.entry-title, h2.entry-title > * {
+  color: var(--dfr-primary-color, "#113946");
+  transition: color 0.2s ease-in-out;
+}
+h2:hover:has(a), h2:hover:has(a) > *, h2:focus:has(a), h2:focus:has(a) > *, h2:focus-within:has(a), h2:focus-within:has(a) > *, h2.wp-block-post-title:hover:has(a), h2.wp-block-post-title:hover:has(a) > *, h2.wp-block-post-title:focus:has(a), h2.wp-block-post-title:focus:has(a) > *, h2.wp-block-post-title:focus-within:has(a), h2.wp-block-post-title:focus-within:has(a) > *, h2.entry-title:hover:has(a), h2.entry-title:hover:has(a) > *, h2.entry-title:focus:has(a), h2.entry-title:focus:has(a) > *, h2.entry-title:focus-within:has(a), h2.entry-title:focus-within:has(a) > * {
+  color: var(--dfr-secondary-color, "#BCA37F");
 }
 
 h3, h3.wp-block-post-title, h3.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.75em;
 }
+h3, h3 > *, h3.wp-block-post-title, h3.wp-block-post-title > *, h3.entry-title, h3.entry-title > * {
+  color: var(--dfr-primary-color, "#113946");
+  transition: color 0.2s ease-in-out;
+}
+h3:hover:has(a), h3:hover:has(a) > *, h3:focus:has(a), h3:focus:has(a) > *, h3:focus-within:has(a), h3:focus-within:has(a) > *, h3.wp-block-post-title:hover:has(a), h3.wp-block-post-title:hover:has(a) > *, h3.wp-block-post-title:focus:has(a), h3.wp-block-post-title:focus:has(a) > *, h3.wp-block-post-title:focus-within:has(a), h3.wp-block-post-title:focus-within:has(a) > *, h3.entry-title:hover:has(a), h3.entry-title:hover:has(a) > *, h3.entry-title:focus:has(a), h3.entry-title:focus:has(a) > *, h3.entry-title:focus-within:has(a), h3.entry-title:focus-within:has(a) > * {
+  color: var(--dfr-secondary-color, "#BCA37F");
+}
 
 h4, h4.wp-block-post-title, h4.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.5em;
+}
+h4, h4 > *, h4.wp-block-post-title, h4.wp-block-post-title > *, h4.entry-title, h4.entry-title > * {
+  color: var(--dfr-primary-color, "#113946");
+  transition: color 0.2s ease-in-out;
+}
+h4:hover:has(a), h4:hover:has(a) > *, h4:focus:has(a), h4:focus:has(a) > *, h4:focus-within:has(a), h4:focus-within:has(a) > *, h4.wp-block-post-title:hover:has(a), h4.wp-block-post-title:hover:has(a) > *, h4.wp-block-post-title:focus:has(a), h4.wp-block-post-title:focus:has(a) > *, h4.wp-block-post-title:focus-within:has(a), h4.wp-block-post-title:focus-within:has(a) > *, h4.entry-title:hover:has(a), h4.entry-title:hover:has(a) > *, h4.entry-title:focus:has(a), h4.entry-title:focus:has(a) > *, h4.entry-title:focus-within:has(a), h4.entry-title:focus-within:has(a) > * {
+  color: var(--dfr-secondary-color, "#BCA37F");
 }
 
 h5, h5.wp-block-post-title, h5.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.25em;
 }
+h5, h5 > *, h5.wp-block-post-title, h5.wp-block-post-title > *, h5.entry-title, h5.entry-title > * {
+  color: var(--dfr-primary-color, "#113946");
+  transition: color 0.2s ease-in-out;
+}
+h5:hover:has(a), h5:hover:has(a) > *, h5:focus:has(a), h5:focus:has(a) > *, h5:focus-within:has(a), h5:focus-within:has(a) > *, h5.wp-block-post-title:hover:has(a), h5.wp-block-post-title:hover:has(a) > *, h5.wp-block-post-title:focus:has(a), h5.wp-block-post-title:focus:has(a) > *, h5.wp-block-post-title:focus-within:has(a), h5.wp-block-post-title:focus-within:has(a) > *, h5.entry-title:hover:has(a), h5.entry-title:hover:has(a) > *, h5.entry-title:focus:has(a), h5.entry-title:focus:has(a) > *, h5.entry-title:focus-within:has(a), h5.entry-title:focus-within:has(a) > * {
+  color: var(--dfr-secondary-color, "#BCA37F");
+}
 
 h6, h6.wp-block-post-title, h6.entry-title {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1em;
+}
+h6, h6 > *, h6.wp-block-post-title, h6.wp-block-post-title > *, h6.entry-title, h6.entry-title > * {
+  color: var(--dfr-primary-color, "#113946");
+  transition: color 0.2s ease-in-out;
+}
+h6:hover:has(a), h6:hover:has(a) > *, h6:focus:has(a), h6:focus:has(a) > *, h6:focus-within:has(a), h6:focus-within:has(a) > *, h6.wp-block-post-title:hover:has(a), h6.wp-block-post-title:hover:has(a) > *, h6.wp-block-post-title:focus:has(a), h6.wp-block-post-title:focus:has(a) > *, h6.wp-block-post-title:focus-within:has(a), h6.wp-block-post-title:focus-within:has(a) > *, h6.entry-title:hover:has(a), h6.entry-title:hover:has(a) > *, h6.entry-title:focus:has(a), h6.entry-title:focus:has(a) > *, h6.entry-title:focus-within:has(a), h6.entry-title:focus-within:has(a) > * {
+  color: var(--dfr-secondary-color, "#BCA37F");
 }
 
 /*# sourceMappingURL=main.css.map */

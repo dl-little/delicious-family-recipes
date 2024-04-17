@@ -47,6 +47,13 @@ class Init {
 	public $enqueue;
 
 	/**
+	 * Categories instance.
+	 *
+	 * @var ?Categories
+	 */
+	public $categories;
+
+	/**
 	 * Instantiate class and load subclasses.
 	 *
 	 * @return object class.
@@ -56,10 +63,11 @@ class Init {
 			self::$instance = new self();
 
 			// Load classes.
-			self::$instance->css_vars = CSS_Vars::get_instance();
-			self::$instance->admin    = Admin::get_instance();
-			self::$instance->fonts    = Fonts::get_instance();
-			self::$instance->enqueue  = Enqueue::get_instance();
+			self::$instance->css_vars    = CSS_Vars::get_instance();
+			self::$instance->admin       = Admin::get_instance();
+			self::$instance->fonts       = Fonts::get_instance();
+			self::$instance->enqueue     = Enqueue::get_instance();
+			self::$instance->categories  = Categories::get_instance();
 		}
 
 		return self::$instance;

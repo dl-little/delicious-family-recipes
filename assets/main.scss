@@ -8,6 +8,17 @@ body {
 @for $i from 1 through 6 {
   h#{$i}, h#{$i}.wp-block-post-title, h#{$i}.entry-title {
     font-family: $header-font-family;
-    @include fontSize($i);
+    @include fontLevels($i);
+
+    &, & > * {
+      color: $primary;
+      transition: color .2s ease-in-out;
+    }
+
+    @include hovered {
+      &:has(a), &:has(a) > * {
+        color: $secondary;
+      }
+    }
   }
 }

@@ -1,7 +1,7 @@
 @import 'abstracts';
 
-.notice {
-  max-width: fit-content;
+.dfr_hidden {
+  display: none !important;
 }
 
 td:has(input[type="number"][name*="font_size"]) {
@@ -52,4 +52,23 @@ tr:has(#dfr_body_font_size) th {
 
 tr:has(#dfr_header_font_family) th {
   font-family: $header-font-family;
+}
+
+#dfr_image_container, #dfr_image_container > img {
+  height: 150px !important;
+  width: 150px !important;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+#dfr_image_container.dfr_icon_not_chosen::after {
+  content: "No image selected. Should be at least 728px by 728px.";
+  display: flex;
+  align-items:center;
+  text-align:center;
+  position: absolute;
+  width: calc(100% - calc(25% + 2px));
+  height: calc(100% - calc(25% + 2px));
+  padding: 12.5%;
+  border: 1px solid red;
 }
