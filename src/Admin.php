@@ -31,7 +31,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 *
 		 * @var string
 		 */
-		private $template_path = DFR_DIR . '/templates';
+		private $template_path = DFR_DIR . '/admin-templates';
 
 		/**
 		 * Admin settings.

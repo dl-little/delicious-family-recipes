@@ -134,7 +134,13 @@ if ( class_exists( 'DFR\Init' ) ) {
 			}
 			
 			wp_enqueue_media();
-			wp_register_script( self::$prefix . 'category_images', DFR_PLUGIN_URL . '/assets/dist/categoryImages.js', array( 'media-upload', 'jquery' ) );
+			wp_register_script(
+				self::$prefix . 'category_images',
+				DFR_PLUGIN_URL . '/assets/dist/categoryImages.js',
+				array( 'media-upload', 'jquery' ),
+				false,
+				true
+			);
 			wp_enqueue_script( self::$prefix . 'category_images' );
 		}
 	}
