@@ -1,26 +1,19 @@
 {
 	"name": "doug/delicious-family-recipes",
 	"config": {
-		"vendor-dir": "lib",
+		"vendor-dir": "vendor",
 		"optimize-autoloader": true
 	},
 	"autoload": {
 		"psr-4": {
-			"DFR\\": "src/"
+			"DFR\\": "includes/"
 		}
 	},
 	"scripts": {
-		"build-admin-styles": "sass ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
-		"watch-admin-styles": "sass --watch ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
-		"watch-main-styles": "sass --watch ./assets/main.scss ./assets/dist/main.css",
-		"build-main-styles": "sass ./assets/main.scss ./assets/dist/main.css",
-		"build": [
-			"sass ./assets/main.scss ./assets/dist/main.css",
-			"sass ./assets/adminStyles.scss ./assets/dist/adminStyles.css",
-			"rm -rf build",
-			"mkdir -p 'build'",
-			"zip -r build/delicious-family-recipes.zip . -x '*.lock' -x '*.md' -x '*.scss' -x '*.gitignore' -x './build/'"
-		]
+		"build:admin": "sass ./scss/adminStyles.scss ./admin/css/adminStyles.css",
+		"watch:admin": "sass --watch ./scss/adminStyles.scss ./admin/css/adminStyles.css",
+		"watch:main": "sass --watch ./scss/main.scss ./public/css/main.css",
+		"build:main": "sass ./scss/main.scss ./public/css/main.css"
 	},
 	"require": {}
 }

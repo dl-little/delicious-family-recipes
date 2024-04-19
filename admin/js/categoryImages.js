@@ -33,8 +33,8 @@ document.addEventListener( 'DOMContentLoaded', function ( e ) {
 
 			addImageLink.classList.add( 'dfr_hidden' );
 			delImageLink.classList.remove( 'dfr_hidden' );
-			imageContainer.classList.remove( 'dfr_icon_not_chosen' );
-			imageContainer.classList.add( 'dfr_icon_chosen' );
+			imageContainer.classList.remove( 'dfr_image_not_chosen' );
+			imageContainer.classList.add( 'dfr_image_chosen' );
 		} );
 
 		frame.open();
@@ -47,8 +47,8 @@ document.addEventListener( 'DOMContentLoaded', function ( e ) {
 
 		addImageLink.classList.remove( 'dfr_hidden' );
 		delImageLink.classList.add( 'dfr_hidden' );
-		imageContainer.classList.add( 'dfr_icon_not_chosen' );
-		imageContainer.classList.remove( 'dfr_icon_chosen' );
+		imageContainer.classList.add( 'dfr_image_not_chosen' );
+		imageContainer.classList.remove( 'dfr_image_chosen' );
 
 		imageIdInput.value = '';
 	} );
