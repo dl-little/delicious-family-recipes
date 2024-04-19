@@ -105,11 +105,8 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		public static function save_category_fields(): void {
 			if ( ! isset( $_POST[ 'term_meta' ] ) ) {
-				error_log( print_r( $_POST, true ) );
 				return;
 			}
-
-			error_log( print_r( $_POST, true ) );
 
 			$term_meta = Admin::get_option( 'category_images', [] );
 			$cat_keys  = array_keys( $_POST[ 'term_meta' ] );
