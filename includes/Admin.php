@@ -156,9 +156,11 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * @param string $template_slug
 		 */
 		private function render_template( $template_slug ): void {
-			$path = $this->template_path . '/' . $template_slug . '.php';
+			$path = $this->template_path . '/' . $template_slug;
+			$path .= $template_slug === 'display' ? '.html' : '.php';
 
 			if ( ! is_readable( $path ) ) {
+				error_log($path);
 				return;
 			}
 
