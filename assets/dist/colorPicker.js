@@ -1,3 +1,3 @@
-jQuery(document).ready(function($){
-    $('.color-picker').wpColorPicker();
-});
+jQuery( document ).ready( function ( $ ) {
+	$( '.color-picker' ).wpColorPicker();
+} );
