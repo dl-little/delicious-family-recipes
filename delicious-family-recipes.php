@@ -13,14 +13,14 @@ use DFR\Init;
 // Prevent direct access.
 if (
 	! defined( 'ABSPATH' )
-	|| !function_exists( 'add_action' )
+	|| ! function_exists( 'add_action' )
 ) {
 	exit( 'This plugin requires WordPress.' );
 }
 
 // Ensure autoload map exists.
-if ( ! file_exists( plugin_dir_path(__FILE__) . 'lib/autoload.php' ) ) {
-	exit( 'Installation is messssed up.' );
+if ( ! file_exists( plugin_dir_path(__FILE__) . 'vendor/autoload.php' ) ) {
+	die( 'Installation is messssed up.' );
 }
 
 if ( ! defined('DFR_DIR') ) {
@@ -31,6 +31,6 @@ if ( ! defined( 'DFR_PLUGIN_URL' ) ) {
 	define( 'DFR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
 
-require_once( plugin_dir_path( __FILE__ ) . 'lib/autoload.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'vendor/autoload.php' );
 
 Init::get_instance();

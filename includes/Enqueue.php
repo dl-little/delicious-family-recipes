@@ -45,7 +45,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * Enqueues the main style and script.
 		 */
 		public static function enqueue_scripts(): void {
-			wp_register_style( self::$prefix . 'main_styles', DFR_PLUGIN_URL . '/assets/dist/main.css' );
+			wp_register_style( self::$prefix . 'main_styles', DFR_PLUGIN_URL . '/public/css/main.css' );
 			wp_enqueue_style( self::$prefix . 'main_styles' );
 		}
 

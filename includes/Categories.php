@@ -61,7 +61,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 					<td class="wp-media-buttons">
 						<div 
 							id="<?php echo self::$prefix . 'image_container'; ?>" 
-							class="<?php ( ! empty( $category_images[ $image_slug ] ) ) ? self::$prefix . 'icon_chosen' : self::$prefix . 'icon_not_chosen' ?>" 
+							class="<?php echo self::$prefix , ( ! empty( $category_images[ $image_slug ] ) ) ? 'image_chosen' : 'image_not_chosen' ?>" 
 						>
 							<?php
 								if ( ! empty( $category_images[ $image_slug ] ) ) {
@@ -136,7 +136,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 			wp_enqueue_media();
 			wp_register_script(
 				self::$prefix . 'category_images',
-				DFR_PLUGIN_URL . '/assets/dist/categoryImages.js',
+				DFR_PLUGIN_URL . '/admin/js/categoryImages.js',
 				array( 'media-upload', 'jquery' ),
 				false,
 				true

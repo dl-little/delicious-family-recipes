@@ -31,7 +31,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 *
 		 * @var string
 		 */
-		private $template_path = DFR_DIR . '/admin-templates';
+		private $template_path = DFR_DIR . '/admin/templates';
 
 		/**
 		 * Admin settings.
@@ -179,14 +179,14 @@ if ( class_exists( 'DFR\Init' ) ) {
 				return;
 			}
 
-			wp_register_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . '/assets/dist/adminStyles.css' );
+			wp_register_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . 'admin/css/adminStyles.css' );
 			wp_enqueue_style( self::$prefix . 'admin_styles' );
 			
-			wp_register_script( self::$prefix . 'admin_script', DFR_PLUGIN_URL . '/assets/dist/adminScript.js', [], false, true );
+			wp_register_script( self::$prefix . 'admin_script', DFR_PLUGIN_URL . 'admin/js/adminScript.js', [], false, true );
 			wp_enqueue_script( self::$prefix . 'admin_script' );
 
 			wp_enqueue_style( 'wp-color-picker' );
-    		wp_enqueue_script( self::$prefix . 'color_picker', DFR_PLUGIN_URL . '/assets/dist/colorPicker.js', array( 'wp-color-picker' ), false, true );
+    		wp_enqueue_script( self::$prefix . 'color_picker', DFR_PLUGIN_URL . 'admin/js/colorPicker.js', array( 'wp-color-picker' ), false, true );
 		}
 
 		/**

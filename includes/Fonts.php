@@ -2,6 +2,8 @@
 
 namespace DFR;
 
+use Exception;
+
 if ( class_exists( 'DFR\Init' ) ) {
 	/**
 	 * Fonts is a class that handles fonts.
@@ -22,7 +24,7 @@ if ( class_exists( 'DFR\Init' ) ) {
         /**
          * Font families.
          *
-         * @var ?array
+         * @var array|null
          */
         public static $font_families = null;
 
@@ -44,8 +46,13 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 * Actions on class instantiation.
 		 */
 		public function init(): void {
-            $json                = file_get_contents( __DIR__ . '/../assets/fonts.json' );
-            self::$font_families = json_decode( $json, true )['fontFamilies'];
+
+			if ( ! is_readable( __DIR__ . '/fonts.json' ) ) {
+				return;
+			}
+
+			$json = file_get_contents( __DIR__ . '/fonts.json' );
+			self::$font_families = json_decode( $json, true )['fontFamilies'];
 		}
 
         /**
@@ -53,7 +60,7 @@ if ( class_exists( 'DFR\Init' ) ) {
          *
          * @return array
          */
-        public static function get_font_families(): array {
+        public static function get_font_families(): array|null {
             return self::$font_families;
         }
 	}
