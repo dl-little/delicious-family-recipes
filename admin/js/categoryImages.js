@@ -1,4 +1,4 @@
-document.addEventListener( 'DOMContentLoaded', function ( e ) {
+jQuery( document ).ready( function ( $ ) {
 	let frame,
 		addImageLink = document.getElementById( 'dfr_insert_media_button' ),
 		delImageLink = document.getElementById( 'dfr_delete_media_button' ),

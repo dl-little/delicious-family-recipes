@@ -41,6 +41,13 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public static $settings = null;
 
 		/**
+		 * Admin setting fields.
+		 *
+		 * @var ?array
+		 */
+		private static $fields = null;
+
+		/**
 		 * Instantiate class and load subclasses.
 		 *
 		 * @return object class.
@@ -97,8 +104,16 @@ if ( class_exists( 'DFR\Init' ) ) {
 						'default' => '#FFF2D8',
 						'create_var' => true
 					]
-				]
+				],
+				'categories' => [
+					'extend_categories' => [
+						'default' => true,
+						'create_var' => false
+					]
+				],
 			];
+
+			self::$fields = array_keys( self::$settings );
 		}
 
 		/**
@@ -157,10 +172,9 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		private function render_template( $template_slug ): void {
 			$path = $this->template_path . '/' . $template_slug;
-			$path .= $template_slug === 'display' ? '.html' : '.php';
+			$path .= in_array( $template_slug, self::$fields ) ? '.html' : '.php';
 
 			if ( ! is_readable( $path ) ) {
-				error_log($path);
 				return;
 			}
 
@@ -183,6 +197,10 @@ if ( class_exists( 'DFR\Init' ) ) {
 
 			wp_register_style( self::$prefix . 'admin_styles', DFR_PLUGIN_URL . 'admin/css/adminStyles.css' );
 			wp_enqueue_style( self::$prefix . 'admin_styles' );
+
+			if ( $hook_suffix === 'term.php' ) {
+				return;
+			}
 			
 			wp_register_script( self::$prefix . 'admin_script', DFR_PLUGIN_URL . 'admin/js/adminScript.js', [], false, true );
 			wp_enqueue_script( self::$prefix . 'admin_script' );

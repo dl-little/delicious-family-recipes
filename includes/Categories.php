@@ -133,7 +133,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 			wp_enqueue_media();
 			wp_register_script(
 				self::$prefix . 'category_images',
-				DFR_PLUGIN_URL . '/admin/js/categoryImages.js',
+				DFR_PLUGIN_URL . 'admin/js/categoryImages.js',
 				array( 'media-upload', 'jquery' ),
 				false,
 				true

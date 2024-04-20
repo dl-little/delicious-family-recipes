@@ -1,25 +1,19 @@
-.dfr_hidden {
-  display: none !important;
-}
-
-td:has(input[type=number][name*=font_size]) {
+#dfr-settings-admin td:has(input[type=number][name*=font_size]) {
   position: relative;
 }
-td:has(input[type=number][name*=font_size])::after {
+#dfr-settings-admin td:has(input[type=number][name*=font_size])::after {
   position: absolute;
   top: calc(50% - 7.5px);
   padding-left: 2.25px;
   content: "px";
 }
-
-input[type=number][name*=font_size] {
+#dfr-settings-admin input[type=number][name*=font_size] {
   max-width: calc(30px + 2em);
 }
-
-tr:has(#dfr_use_display_settings:not(:checked)) th {
+#dfr-settings-admin tr:has(#dfr_use_display_settings:not(:checked)) th {
   position: relative;
 }
-tr:has(#dfr_use_display_settings:not(:checked)) th::after {
+#dfr-settings-admin tr:has(#dfr_use_display_settings:not(:checked)) th::after {
   position: absolute;
   top: calc(100% - 20px);
   left: 0;
@@ -28,20 +22,17 @@ tr:has(#dfr_use_display_settings:not(:checked)) th::after {
   content: "Display settings are disabled!";
   color: red;
 }
-tr:has(#dfr_use_display_settings:not(:checked)) ~ tr * {
+#dfr-settings-admin tr:has(#dfr_use_display_settings:not(:checked)) ~ tr * {
   pointer-events: none;
   opacity: 0.5;
 }
-
-tr:has(#dfr_body_font_family) th {
+#dfr-settings-admin tr:has(#dfr_body_font_family) th {
   font-family: var(--dfr-body-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 }
-
-tr:has(#dfr_body_font_size) th {
+#dfr-settings-admin tr:has(#dfr_body_font_size) th {
   font-size: var(--dfr-body-font-size, 18px);
 }
-
-tr:has(#dfr_header_font_family) th {
+#dfr-settings-admin tr:has(#dfr_header_font_family) th {
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 }
 
@@ -62,6 +53,10 @@ tr:has(#dfr_header_font_family) th {
   height: calc(100% - (25% + 2px));
   padding: 12.5%;
   border: 1px solid red;
+}
+
+.dfr_hidden {
+  display: none !important;
 }
 
 /*# sourceMappingURL=adminStyles.css.map */

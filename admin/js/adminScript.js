@@ -1,29 +1,39 @@
-const root = document.querySelector( ':root' );
-const inputs = document.querySelectorAll(
-	'*[name*="dfr_"]:not([type="checkbox"]'
-);
+jQuery( document ).ready( function ( $ ) {
 
-const hasExistingVar = ( target ) => {
-	return !! getComputedStyle( root ).getPropertyValue( target );
-};
+	// $result = $("table.form-table tbody").wrap('div');
+	// console.log( $result );
 
-const updateExistingVar = ( target, value ) => {
-	if ( target.includes( 'size' ) ) {
-		value += 'px';
-	}
+	// console.log(sectionHeadings);
 
-	root.style.setProperty( target, value );
-};
+	const root = document.querySelector( ':root' );
+	const inputs = document.querySelectorAll(
+		'*[name*="dfr_"]:not([type="checkbox"]'
+	);
 
-inputs.forEach( ( input ) => {
-	input.addEventListener( 'change', function ( e ) {
-		if ( ! hasExistingVar( '--' + e.target.id.replaceAll( '_', '-' ) ) ) {
-			return;
+	const hasExistingVar = ( target ) => {
+		return !! getComputedStyle( root ).getPropertyValue( target );
+	};
+
+	const updateExistingVar = ( target, value ) => {
+		if ( target.includes( 'size' ) ) {
+			value += 'px';
 		}
 
-		updateExistingVar(
-			'--' + e.target.id.replaceAll( '_', '-' ),
-			e.target.value
-		);
+		root.style.setProperty( target, value );
+	};
+
+	inputs.forEach( ( input ) => {
+		input.addEventListener( 'change', function ( e ) {
+			if (
+				! hasExistingVar( '--' + e.target.id.replaceAll( '_', '-' ) )
+			) {
+				return;
+			}
+
+			updateExistingVar(
+				'--' + e.target.id.replaceAll( '_', '-' ),
+				e.target.value
+			);
+		} );
 	} );
 } );
