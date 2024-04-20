@@ -40,6 +40,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 			add_action( 'category_edit_form_fields', [ $this, 'add_category_image_field' ], 10 );
 			add_action( 'edited_category', [ $this, 'save_category_fields' ] );
 			add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_category_script' ] );
+			add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ] );
 		}
 
 		/**
@@ -139,6 +140,26 @@ if ( class_exists( 'DFR\Init' ) ) {
 				true
 			);
 			wp_enqueue_script( self::$prefix . 'category_images' );
+		}
+
+		/**
+		 * Enqueue everything for the category extension block.
+		 */
+		public function enqueue_block_editor_assets() {
+
+			// $asset_file  = include untrailingslashit( DFR_DIR ) . '/build/index.asset.php';
+
+			// wp_enqueue_script(
+			// 	'enable-column-direction-editor-scripts',
+			// 	DFR_PLUGIN_URL . '/build/index.js',
+			// 	$asset_file['dependencies'],
+			// 	$asset_file['version']
+			// );
+
+			// wp_enqueue_style(
+			// 	'enable-column-direction-editor-styles',
+			// 	$plugin_url . '/src/editor.css'
+			// );
 		}
 	}
 }
