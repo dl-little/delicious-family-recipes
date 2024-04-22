@@ -20,6 +20,20 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public static $instance = null;
 
 		/**
+		 * Is category block registered.
+		 *
+		 * @var ?bool
+		 */
+		public $is_block_registered = false;
+
+		/**
+		 * Meta key for image.
+		 *
+		 * @var ?string
+		 */
+		public static $term_meta_key = 'dfr_image';
+
+		/**
 		 * Instantiate class.
 		 *
 		 * @return object class.
@@ -41,6 +55,21 @@ if ( class_exists( 'DFR\Init' ) ) {
 			add_action( 'edited_category', [ $this, 'save_category_fields' ] );
 			add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_category_script' ] );
 			add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ] );
+			add_action( 'init', [ $this, 'category_block_init' ] );
+		}
+
+		/**
+		 * Register the category block
+		 */
+		public function category_block_init() {
+			$this->is_block_registered = ! empty( register_block_type( untrailingslashit( DFR_DIR ) . '/build/category-block' ) ) ? true : false;
+			register_term_meta(
+				'category',
+				self::$term_meta_key,
+				[
+					'show_in_rest' => true
+				],
+			);
 		}
 
 		/**
@@ -48,8 +77,8 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		public static function add_category_image_field( $tag ): void {
 			$id              = $tag->term_id;
-			$category_images = Admin::get_option( 'category_images', [] );
-			$image_slug      = $id . '_icon';
+			$term_meta       = get_term_meta( $id, self::$term_meta_key, true );
+
 			?>
 				<tr 
 					class="form-field" 
@@ -57,23 +86,23 @@ if ( class_exists( 'DFR\Init' ) ) {
 					data-slug="<?php echo $tag->slug; ?>"
 				>
 					<th scope="row" valign="top">
-						<label for="term_meta[<?php echo $image_slug; ?>]"><?php _e('Category Image'); ?></label>
+						<label for="term_meta[<?php echo self::$term_meta_key; ?>]"><?php _e('Category Image'); ?></label>
 					</th>
 					<td class="wp-media-buttons">
 						<div 
 							id="<?php echo self::$prefix . 'image_container'; ?>" 
-							class="<?php echo self::$prefix , ( ! empty( $category_images[ $image_slug ] ) ) ? 'image_chosen' : 'image_not_chosen' ?>" 
+							class="<?php echo self::$prefix , ( ! empty( $term_meta ) ) ? 'image_chosen' : 'image_not_chosen' ?>" 
 						>
 							<?php
-								if ( ! empty( $category_images[ $image_slug ] ) ) {
-									echo wp_get_attachment_image( $category_images[ $image_slug ] );
+								if ( ! empty( $term_meta ) ) {
+									echo wp_get_attachment_image( $term_meta );
 								}
 							?>
 						</div>
 						<button 
 							type="button" 
 							id="<?php echo self::$prefix . 'insert_media_button'; ?>" 
-							class="button add_media <?php echo ( ! empty( $category_images[ $image_slug ] ) ) ? 'dfr_hidden' : null; ?>"
+							class="button add_media <?php echo ( ! empty( $term_meta ) ) ? 'dfr_hidden' : null; ?>"
 						>
 							<span class="wp-media-buttons-icon"></span> 
 							Select Category Image
@@ -81,18 +110,18 @@ if ( class_exists( 'DFR\Init' ) ) {
 						<button 
 							type="button" 
 							id="<?php echo self::$prefix . 'delete_media_button'; ?>" 
-							class="button add_media <?php echo ( empty( $category_images[ $image_slug ] ) ) ? 'dfr_hidden' : null; ?>"
+							class="button add_media <?php echo ( empty( $term_meta ) ) ? 'dfr_hidden' : null; ?>"
 						>
 							Remove Category Image
 						</button>
 						<input 
 							type="hidden" 
 							class="dfr_hidden" 
-							name="term_meta[<?php echo $image_slug; ?>]" 
-							id="term_meta[<?php echo $image_slug; ?>]"
+							name="term_meta[<?php echo self::$term_meta_key; ?>]" 
+							id="term_meta[<?php echo self::$term_meta_key; ?>]"
 							size="25"
 							style="width:60%;"
-							value="<?php echo ( ! empty( $category_images[ $image_slug ] ) ) ? $category_images[ $image_slug ] : '' ?>"
+							value="<?php echo ( ! empty( $term_meta ) ) ? $term_meta : '' ?>"
 						>
 						<br />
 						<span class="description dfr_hidden"><?php _e('The selected category image.'); ?></span>
@@ -103,22 +132,19 @@ if ( class_exists( 'DFR\Init' ) ) {
 
 		/**
 		 * Saves the term meta.
+		 *
+		 * @param int $term_id Term ID.
 		 */
-		public static function save_category_fields(): void {
+		public function save_category_fields( $term_id ): void {
 			if ( ! isset( $_POST[ 'term_meta' ] ) ) {
 				return;
 			}
 
-			$term_meta = Admin::get_option( 'category_images', [] );
-			$cat_keys  = array_keys( $_POST[ 'term_meta' ] );
-
-			foreach ( $cat_keys as $key ) {
-				if ( isset( $_POST[ 'term_meta' ][ $key ] ) ) {
-					$term_meta[ $key ] = $_POST[ 'term_meta' ][ $key ];
-				}
-			}
-
-			Admin::update_option( 'category_images', $term_meta );
+			update_term_meta(
+				$term_id,
+				self::$term_meta_key,
+				$_POST[ 'term_meta' ][ self::$term_meta_key ]
+			);
 		}
 
 		/**
@@ -145,21 +171,25 @@ if ( class_exists( 'DFR\Init' ) ) {
 		/**
 		 * Enqueue everything for the category extension block.
 		 */
-		public function enqueue_block_editor_assets() {
+		public function enqueue_block_editor_assets(): void {
 
-			// $asset_file  = include untrailingslashit( DFR_DIR ) . '/build/index.asset.php';
+			if ( $this->is_block_registered ) {
+				return;
+			}
 
-			// wp_enqueue_script(
-			// 	'enable-column-direction-editor-scripts',
-			// 	DFR_PLUGIN_URL . '/build/index.js',
-			// 	$asset_file['dependencies'],
-			// 	$asset_file['version']
-			// );
+			$asset_file  = include untrailingslashit( DFR_DIR ) . '/build/category-block/index.asset.php';
 
-			// wp_enqueue_style(
-			// 	'enable-column-direction-editor-styles',
-			// 	$plugin_url . '/src/editor.css'
-			// );
+			wp_enqueue_script(
+				'category-block-scripts',
+				DFR_PLUGIN_URL . '/build/category-block/index.js',
+				$asset_file['dependencies'],
+				$asset_file['version']
+			);
+
+			wp_enqueue_style(
+				'category-block-styles',
+				DFR_PLUGIN_URL . '/build/category-block/index.js'
+			);
 		}
 	}
 }
