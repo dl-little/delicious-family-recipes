@@ -2,8 +2,9 @@ import classnames from 'classnames';
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { decodeEntities } from '@wordpress/html-entities';
-import { ToggleControl, PanelBody, RadioControl, CategorySelector } from '@wordpress/components';
+import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data'
+import Select from 'react-select'
 
 import './editor.scss';
 
@@ -20,27 +21,38 @@ export default function Edit( props ) {
 	const { attributes, setAttributes, className } = props;
 	const { showBoxShadow, sortByCount, catCount, chosenCategories } = attributes
 
-	const { records: categories, isResolving } = useEntityRecords(
+	const { records: categories } = useEntityRecords(
 		'taxonomy',
 		'category',
 		{
-			per_page: Number( catCount ),
-			...(sortByCount) && {
+			per_page: !!sortByCount ? catCount : -1,
+			...( !!sortByCount ) && {
 				orderby: 'count',
 				order: 'desc',
 			},
-			...( !sortByCount && !!chosenCategories.length ) && {
-				include: chosenCategories
-			}
 		}
 	);
+
+	const options = categories?.map( cat => ({
+		value: cat.id,
+		label: cat.name 
+	}));
 
 	const getCategoriesList = () => {
 		if ( ! categories?.length ) {
 			return [];
 		}
 
-		return categories;
+		if ( !!sortByCount || !chosenCategories?.length ) {
+			return categories;
+		}
+
+		const selectedIds  = chosenCategories?.map( cc => cc.value );
+		const filteredCats = categories?.filter( cat => selectedIds.includes( cat.id ) ).sort( ( a, b ) => {
+			return selectedIds.indexOf( a.id ) - selectedIds.indexOf( b.id )
+		} )
+
+		return filteredCats;
 	};
 
 	const renderCategoryName = ( name ) =>
@@ -58,7 +70,6 @@ export default function Edit( props ) {
 	};
 	
 	const renderCategoryListItem = ( category ) => {
-		console.log(category)
 		const { id, link, count, name } = category;
 		return (
 			<li key={ id } className={ `cat-item cat-item-${ id }` }>
@@ -67,6 +78,12 @@ export default function Edit( props ) {
 				</a>
 			</li>
 		);
+	};
+
+	const handleSelection = ( newValue, actionType ) => {
+		setAttributes( {
+			chosenCategories: newValue
+		} );
 	};
 
 	return (
@@ -120,6 +137,16 @@ export default function Edit( props ) {
 							} )
 						} }
 					/>
+					{ !sortByCount &&
+						<Select
+							isMulti={true}
+							options={options}
+							defaultValue={chosenCategories}
+							onChange={ (newValue, actionType ) => {
+								handleSelection(newValue, actionType)
+							} }
+						/>
+					}
 				</PanelBody>
 			</InspectorControls>
 		</>
