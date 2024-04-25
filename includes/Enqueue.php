@@ -39,13 +39,14 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public function init(): void {
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 10 );
 			add_filter( 'body_class', [ $this, 'add_dfr_body_class' ] );
+			add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_editor_assets' ] );
 		}
 
 		/**
 		 * Enqueues the main style and script.
 		 */
 		public static function enqueue_scripts(): void {
-			wp_register_style( self::$prefix . 'main_styles', DFR_PLUGIN_URL . '/public/css/main.css' );
+			wp_register_style( self::$prefix . 'main_styles', DFR_PLUGIN_URL . 'public/css/main.css' );
 			wp_enqueue_style( self::$prefix . 'main_styles' );
 		}
 
@@ -57,6 +58,14 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public static function add_dfr_body_class( $classes ): array {
 			$classes[] = self::$slug;
 			return $classes;
+		}
+
+		/**
+		 * Enqueues the script for the block editor.
+		 */
+		public static function enqueue_block_editor_assets(): void {
+			wp_register_style( self::$prefix . 'editor_styles', DFR_PLUGIN_URL . 'admin/css/editorStyles.css' );
+			wp_enqueue_style( self::$prefix . 'editor_styles' );
 		}
 	}
 }

@@ -1,0 +1,21 @@
+$desktop-break: 768px;
+$tablet-break: 421px;
+$large-phone-break: 301px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop-break}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-break}) {
+    @content;
+  }
+}
+
+@mixin large-phone {
+  @media (min-width: #{$large-phone-break}) {
+    @content;
+  }
+}

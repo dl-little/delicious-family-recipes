@@ -12,6 +12,8 @@
 	"scripts": {
 		"build:admin": "sass ./scss/adminStyles.scss ./admin/css/adminStyles.css",
 		"watch:admin": "sass --watch ./scss/adminStyles.scss ./admin/css/adminStyles.css",
+		"build:editor": "sass ./scss/editorStyles.scss ./admin/css/editorStyles.css",
+		"watch:editor": "sass --watch ./scss/editorStyles.scss ./admin/css/editorStyles.scss",
 		"watch:main": "sass --watch ./scss/main.scss ./public/css/main.css",
 		"build:main": "sass ./scss/main.scss ./public/css/main.css"
 	},

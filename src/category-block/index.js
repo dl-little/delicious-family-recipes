@@ -29,19 +29,23 @@ import metadata from './block.json';
 registerBlockType( metadata.name, {
 	...metadata,
 	attributes: {
-		showBoxShadow: {
-			type: 'boolean',
-			default: true
-		},
 		sortByCount: {
 			type: 'boolean',
 			default: true
+		},
+		selectCategories: {
+			type: 'boolean',
+			default: false
 		},
 		catCount: {
 			type: 'string',
 			default: '4'
 		},
 		chosenCategories: {
+			type: 'array',
+			default: []
+		},
+		popularCategories: {
 			type: 'array',
 			default: []
 		}

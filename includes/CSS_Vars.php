@@ -39,6 +39,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public function init(): void {
 			add_action( 'admin_enqueue_scripts', [ $this, 'append_css_vars_to_admin_stylesheet' ], 20 );
 			add_action( 'wp_enqueue_scripts', [ $this, 'append_css_vars_to_main_stylesheet' ], 20 );
+			add_action( 'enqueue_block_assets', [ $this, 'append_css_vars_to_editor_stylesheet' ], 20 );
 		}
 
 		/**
@@ -60,6 +61,13 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		public static function append_css_vars_to_main_stylesheet(): void {
 			self::append_css_vars_to_stylesheet( self::$prefix . 'main_styles' );
+		}
+
+		/**
+		 * Appends vars to main stylesheet.
+		 */
+		public static function append_css_vars_to_editor_stylesheet(): void {
+			self::append_css_vars_to_stylesheet( self::$prefix . 'editor_styles' );
 		}
 
 		/**
