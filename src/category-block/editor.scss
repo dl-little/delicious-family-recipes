@@ -3,4 +3,25 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.editor-styles-wrapper {
 
+  @import 'base';
+
+  .wp-block-dfr-category {
+
+    ul#cat-list {
+      
+      li.cat-item {
+
+        a.cat-link {
+
+          span.cat-span {
+          }
+
+          img.cat-img {
+          }
+        }
+      }
+    }
+  }
+}

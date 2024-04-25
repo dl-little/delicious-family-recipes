@@ -1,7 +1,8 @@
 {
 	"devDependencies": {
-		"@wordpress/scripts": "^27.7.0",
 		"@wordpress/icons": "^9.35.0",
+		"@wordpress/scripts": "^27.7.0",
+		"react-select": "^5.8.0",
 		"webpack-remove-empty-scripts": "^0.8.4"
 	},
 	"scripts": {

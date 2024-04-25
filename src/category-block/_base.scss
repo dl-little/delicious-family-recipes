@@ -1,0 +1,125 @@
+@import '../../scss/abstracts';
+@import '../../scss/base';
+
+.wp-block-dfr-category {
+  width: 100%;
+
+  ul#cat-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: $gap;
+
+    @include tablet {
+      grid-template-columns: repeat(auto-fill, calc(50% - calc($gap / 2)));
+    }
+
+    @include desktop {
+      grid-auto-columns: var(--dfr-item-cols);
+      grid-auto-flow: column;
+      grid-template-columns: unset;
+    }
+
+    li.cat-item {
+      padding-top: 100%;
+      position: relative;
+
+      a.cat-link {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-decoration: none;
+
+        span.cat-span {
+          color: #FFFFFF;
+          background: $primary;
+          transition: $transition;
+          position: absolute;
+          left: calc( $gap / 2 );
+          bottom: calc( $gap / 2 );
+          padding: calc( $gap / 3 ) calc( $gap / 2 );
+          max-width: calc( 100% - calc( $gap * 2 ) );
+          word-wrap: break-word;
+        }
+
+        @include hovered {
+          span.cat-span {
+            background: $secondary;
+          }
+        }
+
+        img.cat-img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          z-index: -1;
+
+          &[src="#"] {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.circle-style {
+      margin-bottom: $double-gap;
+      grid-column-gap: $large-gap;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: calc( $gap + $double-gap );
+
+      @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: calc( $gap + $double-gap );
+      }
+
+      @include desktop {
+        grid-auto-columns: var(--dfr-item-cols);
+        grid-auto-flow: column;
+        grid-template-columns: unset;
+      }
+
+      li.cat-item {
+        a.cat-link {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: flex-end;
+
+          img.cat-img {
+            transition: $transition;
+            border-radius: 100%;
+            box-shadow: $box-shadow;
+          }
+
+          span.cat-span {
+            color: $primary;
+            background: unset;
+            padding: unset;
+            position: static;
+            max-width: 100%;
+            margin-bottom: calc( $double-gap * -1 );
+            font-weight: 600; 
+          }
+
+          @include hovered {
+            img.cat-img {
+              box-shadow: none;
+            }
+
+            span.cat-span {
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

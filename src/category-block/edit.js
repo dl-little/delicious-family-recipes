@@ -1,9 +1,12 @@
-import classnames from 'classnames';
 import { __ } from '@wordpress/i18n';
+import classnames from 'classnames';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { decodeEntities } from '@wordpress/html-entities';
-import { ToggleControl, PanelBody, RadioControl, CategorySelector } from '@wordpress/components';
-import { useEntityRecords } from '@wordpress/core-data'
+import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
+import { useEntityRecords } from '@wordpress/core-data';
+import CategoryListItem from './components/CategoryListItem';
+import { useEffect } from '@wordpress/element';
+import { standardizeCats } from './helpers';
+import Select from 'react-select';
 
 import './editor.scss';
 
@@ -17,56 +20,81 @@ import './editor.scss';
  */
 export default function Edit( props ) {
 
-	const { attributes, setAttributes, className } = props;
-	const { showBoxShadow, sortByCount, catCount, chosenCategories } = attributes
+	const { attributes, setAttributes } = props;
+	const { sortByCount, catCount, chosenCategories, selectCategories } = attributes;
 
-	const { records: categories, isResolving } = useEntityRecords(
+	const { records: categories } = useEntityRecords(
 		'taxonomy',
 		'category',
 		{
-			per_page: Number( catCount ),
-			...(sortByCount) && {
+			per_page: !!sortByCount ? catCount : -1,
+			...( !!sortByCount ) && {
 				orderby: 'count',
 				order: 'desc',
 			},
-			...( !sortByCount && !!chosenCategories.length ) && {
-				include: chosenCategories
-			}
 		}
 	);
 
+	useEffect(() => {
+		if ( !!categories && !!sortByCount ) {
+			const popularCats = standardizeCats( categories )
+			setAttributes( {
+				popularCategories: popularCats
+			} );
+		}
+	}, [ categories, sortByCount ])
+
+	const options = standardizeCats( categories );
+
 	const getCategoriesList = () => {
-		if ( ! categories?.length ) {
+		if ( !categories?.length ) {
 			return [];
 		}
 
-		return categories;
-	};
+		if ( !!sortByCount ) {
+			return categories;
+		}
 
-	const renderCategoryName = ( name ) =>
-		! name ? __( '(Untitled)' ) : decodeEntities( name ).trim();
+		if ( !chosenCategories?.length ) {
+			return [];
+		}
+
+		const selectedIds  = chosenCategories?.map( cc => cc.value );
+		const filteredCats = categories?.filter( cat => selectedIds.includes( cat.id ) )
+		const sortedCats = filteredCats.sort( ( a, b ) => {
+			return selectedIds.indexOf( a.id ) - selectedIds.indexOf( b.id )
+		} );
+
+		return sortedCats;
+	};
 
 	const renderCategoryList = () => {
 		const categoriesList = getCategoriesList();
+		const numberOfCols = !!sortByCount ? catCount : categoriesList.length;
+		const gridAutoCols = numberOfCols >= 4 ? 'minmax(0, 4fr)' : `minmax(0, ${numberOfCols}fr)`;
+
 		return (
-			<ul id='cat-list'>
+			<ul
+				id='cat-list'
+				style={
+					{
+						'--dfr-item-cols': `${gridAutoCols}`,
+						'--dfr-item-count': `${numberOfCols}`,
+					}
+				}
+				className={numberOfCols > 4 ? 'circle-style' : 'square-style'}
+			>
 				{categoriesList.map( ( category ) =>
-					renderCategoryListItem( category )
+					<CategoryListItem category={ category } />
 				)}
 			</ul>
 		);
 	};
-	
-	const renderCategoryListItem = ( category ) => {
-		console.log(category)
-		const { id, link, count, name } = category;
-		return (
-			<li key={ id } className={ `cat-item cat-item-${ id }` }>
-				<a href={ link } target="_blank" rel="noreferrer noopener">
-					{ renderCategoryName( name ) }
-				</a>
-			</li>
-		);
+
+	const handleSelection = ( newValue ) => {
+		setAttributes( {
+			chosenCategories: newValue
+		} );
 	};
 
 	return (
@@ -76,37 +104,6 @@ export default function Edit( props ) {
 			</aside>
 			<InspectorControls>
 				<PanelBody title="Settings">
-					<RadioControl
-						label={ __(
-							'Number of Category Items',
-							'dfr-category'
-						) }
-						selected={ catCount }
-						options={ [
-							{ label: '3', value: '3' },
-							{ label: '4', value: '4' },
-							{ label: '6', value: '6' },
-							{ label: '8', value: '8' },
-						] }
-						onChange={ ( value ) => {
-							setAttributes( {
-								catCount: value
-							} )
-						} }
-					/>
-					<ToggleControl
-						label={ __(
-							'Enable box shadow',
-							'dfr-category'
-						) }
-						checked={ showBoxShadow }
-						onChange={ () => {
-							setAttributes( {
-								showBoxShadow:
-									! showBoxShadow,
-							} )
-						} }
-					/>
 					<ToggleControl
 						label={ __(
 							'Enable sort by count',
@@ -117,9 +114,41 @@ export default function Edit( props ) {
 							setAttributes( {
 								sortByCount:
 									! sortByCount,
+								selectCategories:
+									! selectCategories
 							} )
 						} }
 					/>
+					{ !!sortByCount &&
+						<RadioControl
+							label={ __(
+								'Number of Category Items',
+								'dfr-category'
+							) }
+							selected={ catCount }
+							options={ [
+								{ label: '3', value: '3' },
+								{ label: '4', value: '4' },
+								{ label: '6', value: '6' },
+								{ label: '8', value: '8' },
+							] }
+							onChange={ ( value ) => {
+								setAttributes( {
+									catCount: value
+								} )
+							} }
+						/>
+					}
+					{ !sortByCount &&
+						<Select
+							isMulti={true}
+							options={options}
+							defaultValue={chosenCategories}
+							onChange={ (newValue, actionType ) => {
+								handleSelection(newValue, actionType)
+							} }
+						/>
+					}
 				</PanelBody>
 			</InspectorControls>
 		</>
