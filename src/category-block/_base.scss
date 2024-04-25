@@ -70,7 +70,7 @@
     }
 
     &.circle-style {
-      margin-bottom: $double-gap;
+      margin-bottom: calc( $double-gap * 2 );
       grid-column-gap: $large-gap;
       grid-template-columns: repeat(2, 1fr);
       grid-row-gap: calc( $gap + $double-gap );
@@ -105,8 +105,8 @@
             padding: unset;
             position: static;
             max-width: 100%;
+            font-weight: 600;
             margin-bottom: calc( $double-gap * -1 );
-            font-weight: 600; 
           }
 
           @include hovered {
