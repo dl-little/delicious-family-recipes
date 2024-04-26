@@ -3,7 +3,7 @@ const MY_VARIATION_NAME = 'dfr/recent-posts';
 
 registerBlockVariation( 'core/query', {
 	name: MY_VARIATION_NAME,
-	title: 'Delicious Family Recipes Recent Post Block',
+	title: 'Delicious Family Recipes Recent Posts Block',
     description: 'Recent posts for use on the homepage.',
     isActive: ( { namespace, query } ) => {
 		return (

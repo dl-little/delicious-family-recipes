@@ -26,6 +26,7 @@ div.dfr-recent-posts {
       }
 
       div.wp-block-post-terms {
+        font-size: .9em;
         & > *:first-child {
           padding: $button-padding;
           @include button-styles( $tertiary, $accent, $contrast );

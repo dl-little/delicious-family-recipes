@@ -16,6 +16,31 @@ body:has(.dfr-full-width-group) {
       width: 100%;
       background: $tertiary;
     }
+
+    &.primary-background {
+      &, &::before, &::after {
+        background: $primary
+      }
+    }
+
+    &.secondary-background {
+      &, &::before, &::after {
+        background: $secondary;
+      }
+    }
+
+    &.accent-background {
+      &, &::before, &::after {
+        background: $accent;
+      }
+    }
+    
+    &.contrast-background {
+      color: $white;
+      &, &::before, &::after {
+        background: $contrast;
+      }
+    }
   
     &::before {
       left: -100%;

@@ -3,7 +3,7 @@ const MY_VARIATION_NAME = 'dfr/featured-posts';
 
 registerBlockVariation( 'core/query', {
 	name: MY_VARIATION_NAME,
-	title: 'Delicious Family Recipes Featured Post Block',
+	title: 'Delicious Family Recipes Featured Posts Block',
     description: 'Featured posts for use on the homepage.',
     isActive: ( { namespace, query } ) => {
 		return (

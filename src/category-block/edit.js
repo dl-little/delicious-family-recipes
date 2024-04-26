@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import classnames from 'classnames';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 import { useEntityRecords } from '@wordpress/core-data';
