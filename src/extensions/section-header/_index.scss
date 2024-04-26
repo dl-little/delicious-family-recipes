@@ -1,0 +1,28 @@
+@import '../../../scss/abstracts';
+@import '../../../scss/base';
+
+.dfr-section-header {
+  .wp-block-group.is-layout-flex {
+    width: 100%;
+    align-items: flex-end;
+
+    .wp-block-button .wp-block-button__link {
+      @include button-styles( $transparent, $transparent, $primary, 0 );
+      font-weight: $light-bold;
+
+      &::after {
+        transition: $transition;
+        content: '\2192';
+        margin-left: $half-gap;
+        color: $primary;
+      }
+
+      @include hovered {
+        color: $secondary;
+        &::after {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}

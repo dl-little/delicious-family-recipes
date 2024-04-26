@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'colors';
+
 @mixin fontLevels($level) {
 	@if $level == 1 {
 		font-size: 2.25em;
@@ -17,5 +20,19 @@
 @mixin hovered {
 	&:hover, &:focus, &:focus-within {
 		@content;
+	}
+}
+
+@mixin button-styles( $background, $hover-background, $text-color, $border-radius: 0, $padding-amount: $button-padding ) {
+	color: #{$text-color};
+	display: initial;
+	padding: #{$padding-amount};
+	background: #{$background};
+	text-decoration: none;
+	transition: $transition;
+	border-radius: #{$border-radius};
+
+	@include hovered {
+		background: #{$hover-background};
 	}
 }

@@ -1,5 +1,15 @@
-$box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .2);
+$box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .1);
+$hovered-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .2);
+
 $gap: 15px;
 $large-gap: calc( 1.2 * $gap );
 $double-gap: calc( 2 * $gap );
+$half-gap: calc( $gap / 2 );
+
+$large-button-padding: $half-gap $gap;
+$button-padding: calc( $gap / 3 ) $half-gap;
+
 $transition: all .2s ease-in-out;
+
+$bold: 700;
+$light-bold: 600;

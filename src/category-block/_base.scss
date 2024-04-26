@@ -34,15 +34,16 @@
         text-decoration: none;
 
         span.cat-span {
-          color: #FFFFFF;
+          color: $white;
           background: $primary;
           transition: $transition;
           position: absolute;
-          left: calc( $gap / 2 );
-          bottom: calc( $gap / 2 );
-          padding: calc( $gap / 3 ) calc( $gap / 2 );
-          max-width: calc( 100% - calc( $gap * 2 ) );
+          left: $half-gap;
+          bottom: $half-gap;
+          padding: $button-padding;
+          max-width: calc( 100% - $half-gap );
           word-wrap: break-word;
+          font-family: $header-font-family;
         }
 
         @include hovered {
@@ -97,6 +98,7 @@
             transition: $transition;
             border-radius: 100%;
             box-shadow: $box-shadow;
+            border: 2px solid $white;
           }
 
           span.cat-span {
@@ -105,13 +107,12 @@
             padding: unset;
             position: static;
             max-width: 100%;
-            font-weight: 600;
             margin-bottom: calc( $double-gap * -1 );
           }
 
           @include hovered {
             img.cat-img {
-              box-shadow: none;
+              box-shadow: $hovered-box-shadow;
             }
 
             span.cat-span {

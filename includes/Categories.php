@@ -185,7 +185,7 @@ if ( class_exists( 'DFR\Init' ) ) {
 		}
 
 		/**
-		 * Enqueue everything for the category extension block.
+		 * Enqueue everything for the block editor.
 		 */
 		public function enqueue_block_editor_assets(): void {
 

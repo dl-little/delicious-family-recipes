@@ -1,0 +1,66 @@
+@import '../../../scss/abstracts';
+@import '../../../scss/base';
+
+div.dfr-featured-posts {
+  ul.wp-block-post-template {
+    li.wp-block-post {
+      transition: $transition;
+      box-shadow: $box-shadow;
+
+      figure.wp-block-post-featured-image {
+        margin: 0;
+        padding: 0;
+
+        @include hovered {
+          & ~ h3 {
+            &, & > a {
+              color: $secondary;
+            }
+          }
+        }
+      }
+
+      div.wp-block-post-terms {
+        line-height: 1;
+        margin-top: -.5em;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        font-size: .9em;
+
+        & > *:first-child {
+          @include button-styles($tertiary, $accent, $contrast);
+        }
+
+        & > *:not(:first-child) {
+          display: none;
+        }
+
+        &:has(a[data-chosen="1"]) {
+          a[data-chosen="1"] {
+            @include button-styles($tertiary, $accent, $contrast);
+          }
+  
+          *:not(a[data-chosen="1"]) {
+            display: none;
+          }
+        }
+      }
+
+      .wp-block-post-title {
+        margin: 0;
+        padding: $gap;
+        font-size: $body-font-size;
+        text-align: center;
+
+        &, & > a {
+          text-decoration: none;
+        }
+      }
+
+      @include hovered {
+        box-shadow: $hovered-box-shadow;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import '../../../scss/abstracts';
+@import '../../../scss/base';
+
+div.dfr-recent-posts {
+  ul.wp-block-post-template {
+    li.wp-block-post {
+      transition: $transition;
+      box-shadow: $box-shadow;
+      padding: 0 0 $gap;
+
+      & > *:not(figure) {
+        margin: 0;
+        margin-block-start: $gap;
+        padding: 0 $gap;
+      }
+
+      figure.wp-block-post-featured-image {
+        margin: 0;
+        padding: 0;
+
+        @include hovered {
+          & ~ h3.wp-block-post-title > a{
+            color: $secondary;
+          }
+        }
+      }
+
+      div.wp-block-post-terms {
+        & > *:first-child {
+          padding: $button-padding;
+          @include button-styles( $tertiary, $accent, $contrast );
+        }
+
+        & > *:not(:first-child) {
+          display: none;
+        }
+      }
+
+      h3.wp-block-post-title {
+        a {
+          text-decoration: none;
+        }
+      }
+
+      div.wp-block-post-excerpt {
+        p.wp-block-post-excerpt__more-text {
+          & > a {
+            @include button-styles(
+              $primary,
+              $secondary,
+              $white,
+              $double-gap,
+              $large-button-padding
+            );
+            box-shadow: -2px 2px 0px 0px $secondary;
+
+            @include hovered {
+              box-shadow: -2px 2px 0px 0px $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

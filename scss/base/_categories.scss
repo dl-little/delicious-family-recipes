@@ -6,7 +6,7 @@
 }
 
 #dfr_image_container.dfr_image_not_chosen::after {
-  content: "No image selected. Should be at least 728px by 728px.";
+  content: "No image selected. Should be at least 500px by 500px.";
   display: flex;
   align-items:center;
   text-align:center;
