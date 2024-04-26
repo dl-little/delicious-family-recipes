@@ -5,6 +5,7 @@ import { useEntityRecords } from '@wordpress/core-data';
 import CategoryListItem from './components/CategoryListItem';
 import { useEffect } from '@wordpress/element';
 import { standardizeCats } from './helpers';
+import classnames from 'classnames';
 import Select from 'react-select';
 
 import './editor.scss';
@@ -80,7 +81,7 @@ export default function Edit( props ) {
 						'--dfr-item-count': `${numberOfCols}`,
 					}
 				}
-				className={'cat-list' + numberOfCols > 4 ? ' circle-style' : ' square-style'}
+				className={ classnames( 'cat-list', numberOfCols > 4 ? ' circle-style' : ' square-style') }
 			>
 				{categoriesList.map( ( category ) =>
 					<CategoryListItem category={ category } />

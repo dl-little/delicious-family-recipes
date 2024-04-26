@@ -1,5 +1,6 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import SavedListItem from './components/SavedListItem';
+import classnames from 'classnames';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -28,7 +29,7 @@ export default function save( props ) {
 						'--dfr-item-count': `${numberOfCols}`,
 					}
 				}
-				className={'cat-list' + numberOfCols > 4 ? ' circle-style' : ' square-style'}
+				className={ classnames( 'cat-list', numberOfCols > 4 ? ' circle-style' : ' square-style') }
 			>
 				{categories.map( ( category ) =>
 					<SavedListItem category={category} />
