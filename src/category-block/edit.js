@@ -74,14 +74,13 @@ export default function Edit( props ) {
 
 		return (
 			<ul
-				id='cat-list'
 				style={
 					{
 						'--dfr-item-cols': `${gridAutoCols}`,
 						'--dfr-item-count': `${numberOfCols}`,
 					}
 				}
-				className={numberOfCols > 4 ? 'circle-style' : 'square-style'}
+				className={'cat-list' + numberOfCols > 4 ? ' circle-style' : ' square-style'}
 			>
 				{categoriesList.map( ( category ) =>
 					<CategoryListItem category={ category } />

@@ -4,7 +4,7 @@
 .wp-block-dfr-category {
   width: 100%;
 
-  ul#cat-list {
+  ul.cat-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -71,6 +71,7 @@
     }
 
     &.circle-style {
+      font-size: .9em;
       margin-bottom: calc( $double-gap * 2 );
       grid-column-gap: $large-gap;
       grid-template-columns: repeat(2, 1fr);

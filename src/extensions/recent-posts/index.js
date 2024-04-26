@@ -56,7 +56,7 @@ registerBlockVariation( 'core/query', {
 					level: 3
 				}],
 				['core/post-excerpt', {
-					excerptLength: 30,
+					excerptLength: 15,
 					showMoreOnNewLine: false
 				}]
 			],
