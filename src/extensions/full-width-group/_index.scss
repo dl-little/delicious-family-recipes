@@ -1,0 +1,32 @@
+@import '../../../scss/abstracts';
+@import '../../../scss/base';
+
+body:has(.dfr-full-width-group) {
+  overflow-x: hidden;
+
+  .dfr-full-width-group {
+    position: relative;
+    background: $tertiary;
+  
+    &::before, &::after {
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: $tertiary;
+    }
+  
+    &::before {
+      left: -100%;
+    }
+  
+    & > .wp-block-group {
+      width: 100%;
+    }
+  
+    &::after {
+      right: -100%;
+    }
+  }
+}
