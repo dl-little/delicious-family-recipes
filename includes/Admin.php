@@ -105,12 +105,6 @@ if ( class_exists( 'DFR\Init' ) ) {
 						'create_var' => true
 					]
 				],
-				'categories' => [
-					'extend_categories' => [
-						'default' => true,
-						'create_var' => false
-					]
-				],
 			];
 
 			self::$fields = array_keys( self::$settings );
