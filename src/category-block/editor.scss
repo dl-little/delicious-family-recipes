@@ -8,15 +8,11 @@
   @import 'base';
 
   .wp-block-dfr-category {
-
     ul.cat-list {
-      
       li.cat-item {
-
         a.cat-link {
-
-          img.cat-img {
-
+          img.cat-img, span.cat-span {
+            z-index: 1;
           }
         }
       }
