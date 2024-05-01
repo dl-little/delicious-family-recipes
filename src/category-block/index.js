@@ -31,24 +31,24 @@ registerBlockType( metadata.name, {
 	attributes: {
 		sortByCount: {
 			type: 'boolean',
-			default: true
+			default: true,
 		},
 		selectCategories: {
 			type: 'boolean',
-			default: false
+			default: false,
 		},
 		catCount: {
 			type: 'string',
-			default: '4'
+			default: '4',
 		},
 		chosenCategories: {
 			type: 'array',
-			default: []
+			default: [],
 		},
 		popularCategories: {
 			type: 'array',
-			default: []
-		}
+			default: [],
+		},
 	},
 	edit: Edit,
 	save,

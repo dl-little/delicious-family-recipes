@@ -19,6 +19,7 @@
 
       @include hovered {
         color: $secondary;
+
         &::after {
           color: $secondary;
         }

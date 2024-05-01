@@ -19,6 +19,9 @@
 
 @mixin hovered {
 	&:hover, &:focus, &:focus-within {
+		background: initial;
+		color: initial;
+		border: initial;
 		@content;
 	}
 }

@@ -4,16 +4,14 @@ const MY_VARIATION_NAME = 'dfr/section-header';
 registerBlockVariation( 'core/group', {
 	name: MY_VARIATION_NAME,
 	title: 'Delicious Family Recipes Section Header Block',
-    description: 'Section header for use on the homepage.',
-    isActive: ( { namespace } ) => {
-		return (
-			namespace === MY_VARIATION_NAME
-		);
+	description: 'Section header for use on the homepage.',
+	isActive: ( { namespace } ) => {
+		return namespace === MY_VARIATION_NAME;
 	},
 	icon: 'heading',
-    attributes: {
+	attributes: {
 		className: 'dfr-section-header',
-        namespace: MY_VARIATION_NAME,
+		namespace: MY_VARIATION_NAME,
 		layout: {
 			type: 'flex',
 			orientation: 'vertical',
@@ -22,12 +20,13 @@ registerBlockVariation( 'core/group', {
 		style: {
 			spacing: {
 				blockGap: '8px',
-			}
-		}
-    },
+			},
+		},
+	},
 	innerBlocks: [
 		[
-			'core/group', {
+			'core/group',
+			{
 				layout: {
 					type: 'flex',
 					flexWrap: 'nowrap',
@@ -36,18 +35,22 @@ registerBlockVariation( 'core/group', {
 			},
 			[
 				[ 'core/heading' ],
-				[ 'core/spacer', {
-					style: {
-						layout: {
-							flexSize: null,
-							selfStretch: 'fill',
+				[
+					'core/spacer',
+					{
+						style: {
+							layout: {
+								flexSize: null,
+								selfStretch: 'fill',
+							},
 						},
 					},
-				}],
+				],
 			],
 		],
 		[
-			'core/group', {
+			'core/group',
+			{
 				layout: {
 					type: 'flex',
 					flexWrap: 'nowrap',
@@ -56,17 +59,20 @@ registerBlockVariation( 'core/group', {
 			},
 			[
 				[ 'core/paragraph' ],
-				[ 'core/spacer', {
-					style: {
-						layout: {
-							flexSize: null,
-							selfStretch: 'fill',
+				[
+					'core/spacer',
+					{
+						style: {
+							layout: {
+								flexSize: null,
+								selfStretch: 'fill',
+							},
 						},
 					},
-				}],
+				],
 				[ 'core/buttons' ],
-			]
-		]
+			],
+		],
 	],
-    scope: [ 'inserter' ],
-});
+	scope: [ 'inserter' ],
+} );

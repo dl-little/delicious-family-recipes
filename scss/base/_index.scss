@@ -28,4 +28,8 @@ body.dfr,
       }
     }
   }
+
+  aside[class*="dfr"]:not(:first-child) {
+    margin-block-start: $gap;
+  }
 }

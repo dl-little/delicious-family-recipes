@@ -3,7 +3,11 @@
 
 div.dfr-recent-posts {
   ul.wp-block-post-template {
+    list-style-type: none;
+
     li.wp-block-post {
+      list-style-type: none;
+      margin: 0;
       background: $white;
       transition: $transition;
       box-shadow: $box-shadow;

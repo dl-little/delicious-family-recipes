@@ -4,17 +4,14 @@ const MY_VARIATION_NAME = 'dfr/recent-posts';
 registerBlockVariation( 'core/query', {
 	name: MY_VARIATION_NAME,
 	title: 'Delicious Family Recipes Recent Posts Block',
-    description: 'Recent posts for use on the homepage.',
-    isActive: ( { namespace, query } ) => {
-		return (
-			namespace === MY_VARIATION_NAME
-			&& query.postType === 'post'
-		);
+	description: 'Recent posts for use on the homepage.',
+	isActive: ( { namespace, query } ) => {
+		return namespace === MY_VARIATION_NAME && query.postType === 'post';
 	},
 	icon: 'calendar',
-    attributes: {
+	attributes: {
 		className: 'dfr-recent-posts',
-        namespace: MY_VARIATION_NAME,
+		namespace: MY_VARIATION_NAME,
 		query: {
 			perPage: 3,
 			pages: 0,
@@ -28,40 +25,53 @@ registerBlockVariation( 'core/query', {
 			sticky: 'exclude',
 			inherit: false,
 		},
-    },
+	},
 	innerBlocks: [
 		[
-			'core/post-template', {
+			'core/post-template',
+			{
 				align: 'wide',
 				style: {
 					spacing: {
-						blockGap: "15px"
-					}
+						blockGap: '15px',
+					},
 				},
 				layout: {
 					type: 'grid',
-					columnCount: 3
+					columnCount: 3,
 				},
 			},
 			[
-				['core/post-featured-image', {
-					isLink: true,
-					aspectRatio: "3/4"
-				}],
-				[ 'core/post-terms', {
-					term: 'category'
-				}],
-				[ 'core/post-title', {
-					isLink: true,
-					level: 3
-				}],
-				['core/post-excerpt', {
-					excerptLength: 15,
-					showMoreOnNewLine: false
-				}]
+				[
+					'core/post-featured-image',
+					{
+						isLink: true,
+						aspectRatio: '3/4',
+					},
+				],
+				[
+					'core/post-terms',
+					{
+						term: 'category',
+					},
+				],
+				[
+					'core/post-title',
+					{
+						isLink: true,
+						level: 3,
+					},
+				],
+				[
+					'core/post-excerpt',
+					{
+						excerptLength: 15,
+						showMoreOnNewLine: false,
+					},
+				],
 			],
 		],
 		[ 'core/query-no-results' ],
 	],
-    scope: [ 'inserter' ],
-});
+	scope: [ 'inserter' ],
+} );

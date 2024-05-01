@@ -81,6 +81,20 @@ body.dfr h1, body.dfr h1 > *, body.dfr h1.wp-block-post-title, body.dfr h1.wp-bl
   color: var(--dfr-primary-color, "#113946");
   transition: color 0.2s ease-in-out;
 }
+body.dfr h1:hover, body.dfr h1:focus, body.dfr h1:focus-within, body.dfr h1.wp-block-post-title:hover, body.dfr h1.wp-block-post-title:focus, body.dfr h1.wp-block-post-title:focus-within, body.dfr h1.entry-title:hover, body.dfr h1.entry-title:focus, body.dfr h1.entry-title:focus-within,
+.editor-styles-wrapper h1:hover,
+.editor-styles-wrapper h1:focus,
+.editor-styles-wrapper h1:focus-within,
+.editor-styles-wrapper h1.wp-block-post-title:hover,
+.editor-styles-wrapper h1.wp-block-post-title:focus,
+.editor-styles-wrapper h1.wp-block-post-title:focus-within,
+.editor-styles-wrapper h1.entry-title:hover,
+.editor-styles-wrapper h1.entry-title:focus,
+.editor-styles-wrapper h1.entry-title:focus-within {
+  background: initial;
+  color: initial;
+  border: initial;
+}
 body.dfr h1:hover:has(a), body.dfr h1:hover:has(a) > *, body.dfr h1:focus:has(a), body.dfr h1:focus:has(a) > *, body.dfr h1:focus-within:has(a), body.dfr h1:focus-within:has(a) > *, body.dfr h1.wp-block-post-title:hover:has(a), body.dfr h1.wp-block-post-title:hover:has(a) > *, body.dfr h1.wp-block-post-title:focus:has(a), body.dfr h1.wp-block-post-title:focus:has(a) > *, body.dfr h1.wp-block-post-title:focus-within:has(a), body.dfr h1.wp-block-post-title:focus-within:has(a) > *, body.dfr h1.entry-title:hover:has(a), body.dfr h1.entry-title:hover:has(a) > *, body.dfr h1.entry-title:focus:has(a), body.dfr h1.entry-title:focus:has(a) > *, body.dfr h1.entry-title:focus-within:has(a), body.dfr h1.entry-title:focus-within:has(a) > *,
 .editor-styles-wrapper h1:hover:has(a),
 .editor-styles-wrapper h1:hover:has(a) > *,
@@ -118,6 +132,20 @@ body.dfr h2, body.dfr h2 > *, body.dfr h2.wp-block-post-title, body.dfr h2.wp-bl
 .editor-styles-wrapper h2.entry-title > * {
   color: var(--dfr-primary-color, "#113946");
   transition: color 0.2s ease-in-out;
+}
+body.dfr h2:hover, body.dfr h2:focus, body.dfr h2:focus-within, body.dfr h2.wp-block-post-title:hover, body.dfr h2.wp-block-post-title:focus, body.dfr h2.wp-block-post-title:focus-within, body.dfr h2.entry-title:hover, body.dfr h2.entry-title:focus, body.dfr h2.entry-title:focus-within,
+.editor-styles-wrapper h2:hover,
+.editor-styles-wrapper h2:focus,
+.editor-styles-wrapper h2:focus-within,
+.editor-styles-wrapper h2.wp-block-post-title:hover,
+.editor-styles-wrapper h2.wp-block-post-title:focus,
+.editor-styles-wrapper h2.wp-block-post-title:focus-within,
+.editor-styles-wrapper h2.entry-title:hover,
+.editor-styles-wrapper h2.entry-title:focus,
+.editor-styles-wrapper h2.entry-title:focus-within {
+  background: initial;
+  color: initial;
+  border: initial;
 }
 body.dfr h2:hover:has(a), body.dfr h2:hover:has(a) > *, body.dfr h2:focus:has(a), body.dfr h2:focus:has(a) > *, body.dfr h2:focus-within:has(a), body.dfr h2:focus-within:has(a) > *, body.dfr h2.wp-block-post-title:hover:has(a), body.dfr h2.wp-block-post-title:hover:has(a) > *, body.dfr h2.wp-block-post-title:focus:has(a), body.dfr h2.wp-block-post-title:focus:has(a) > *, body.dfr h2.wp-block-post-title:focus-within:has(a), body.dfr h2.wp-block-post-title:focus-within:has(a) > *, body.dfr h2.entry-title:hover:has(a), body.dfr h2.entry-title:hover:has(a) > *, body.dfr h2.entry-title:focus:has(a), body.dfr h2.entry-title:focus:has(a) > *, body.dfr h2.entry-title:focus-within:has(a), body.dfr h2.entry-title:focus-within:has(a) > *,
 .editor-styles-wrapper h2:hover:has(a),
@@ -157,6 +185,20 @@ body.dfr h3, body.dfr h3 > *, body.dfr h3.wp-block-post-title, body.dfr h3.wp-bl
   color: var(--dfr-primary-color, "#113946");
   transition: color 0.2s ease-in-out;
 }
+body.dfr h3:hover, body.dfr h3:focus, body.dfr h3:focus-within, body.dfr h3.wp-block-post-title:hover, body.dfr h3.wp-block-post-title:focus, body.dfr h3.wp-block-post-title:focus-within, body.dfr h3.entry-title:hover, body.dfr h3.entry-title:focus, body.dfr h3.entry-title:focus-within,
+.editor-styles-wrapper h3:hover,
+.editor-styles-wrapper h3:focus,
+.editor-styles-wrapper h3:focus-within,
+.editor-styles-wrapper h3.wp-block-post-title:hover,
+.editor-styles-wrapper h3.wp-block-post-title:focus,
+.editor-styles-wrapper h3.wp-block-post-title:focus-within,
+.editor-styles-wrapper h3.entry-title:hover,
+.editor-styles-wrapper h3.entry-title:focus,
+.editor-styles-wrapper h3.entry-title:focus-within {
+  background: initial;
+  color: initial;
+  border: initial;
+}
 body.dfr h3:hover:has(a), body.dfr h3:hover:has(a) > *, body.dfr h3:focus:has(a), body.dfr h3:focus:has(a) > *, body.dfr h3:focus-within:has(a), body.dfr h3:focus-within:has(a) > *, body.dfr h3.wp-block-post-title:hover:has(a), body.dfr h3.wp-block-post-title:hover:has(a) > *, body.dfr h3.wp-block-post-title:focus:has(a), body.dfr h3.wp-block-post-title:focus:has(a) > *, body.dfr h3.wp-block-post-title:focus-within:has(a), body.dfr h3.wp-block-post-title:focus-within:has(a) > *, body.dfr h3.entry-title:hover:has(a), body.dfr h3.entry-title:hover:has(a) > *, body.dfr h3.entry-title:focus:has(a), body.dfr h3.entry-title:focus:has(a) > *, body.dfr h3.entry-title:focus-within:has(a), body.dfr h3.entry-title:focus-within:has(a) > *,
 .editor-styles-wrapper h3:hover:has(a),
 .editor-styles-wrapper h3:hover:has(a) > *,
@@ -194,6 +236,20 @@ body.dfr h4, body.dfr h4 > *, body.dfr h4.wp-block-post-title, body.dfr h4.wp-bl
 .editor-styles-wrapper h4.entry-title > * {
   color: var(--dfr-primary-color, "#113946");
   transition: color 0.2s ease-in-out;
+}
+body.dfr h4:hover, body.dfr h4:focus, body.dfr h4:focus-within, body.dfr h4.wp-block-post-title:hover, body.dfr h4.wp-block-post-title:focus, body.dfr h4.wp-block-post-title:focus-within, body.dfr h4.entry-title:hover, body.dfr h4.entry-title:focus, body.dfr h4.entry-title:focus-within,
+.editor-styles-wrapper h4:hover,
+.editor-styles-wrapper h4:focus,
+.editor-styles-wrapper h4:focus-within,
+.editor-styles-wrapper h4.wp-block-post-title:hover,
+.editor-styles-wrapper h4.wp-block-post-title:focus,
+.editor-styles-wrapper h4.wp-block-post-title:focus-within,
+.editor-styles-wrapper h4.entry-title:hover,
+.editor-styles-wrapper h4.entry-title:focus,
+.editor-styles-wrapper h4.entry-title:focus-within {
+  background: initial;
+  color: initial;
+  border: initial;
 }
 body.dfr h4:hover:has(a), body.dfr h4:hover:has(a) > *, body.dfr h4:focus:has(a), body.dfr h4:focus:has(a) > *, body.dfr h4:focus-within:has(a), body.dfr h4:focus-within:has(a) > *, body.dfr h4.wp-block-post-title:hover:has(a), body.dfr h4.wp-block-post-title:hover:has(a) > *, body.dfr h4.wp-block-post-title:focus:has(a), body.dfr h4.wp-block-post-title:focus:has(a) > *, body.dfr h4.wp-block-post-title:focus-within:has(a), body.dfr h4.wp-block-post-title:focus-within:has(a) > *, body.dfr h4.entry-title:hover:has(a), body.dfr h4.entry-title:hover:has(a) > *, body.dfr h4.entry-title:focus:has(a), body.dfr h4.entry-title:focus:has(a) > *, body.dfr h4.entry-title:focus-within:has(a), body.dfr h4.entry-title:focus-within:has(a) > *,
 .editor-styles-wrapper h4:hover:has(a),
@@ -233,6 +289,20 @@ body.dfr h5, body.dfr h5 > *, body.dfr h5.wp-block-post-title, body.dfr h5.wp-bl
   color: var(--dfr-primary-color, "#113946");
   transition: color 0.2s ease-in-out;
 }
+body.dfr h5:hover, body.dfr h5:focus, body.dfr h5:focus-within, body.dfr h5.wp-block-post-title:hover, body.dfr h5.wp-block-post-title:focus, body.dfr h5.wp-block-post-title:focus-within, body.dfr h5.entry-title:hover, body.dfr h5.entry-title:focus, body.dfr h5.entry-title:focus-within,
+.editor-styles-wrapper h5:hover,
+.editor-styles-wrapper h5:focus,
+.editor-styles-wrapper h5:focus-within,
+.editor-styles-wrapper h5.wp-block-post-title:hover,
+.editor-styles-wrapper h5.wp-block-post-title:focus,
+.editor-styles-wrapper h5.wp-block-post-title:focus-within,
+.editor-styles-wrapper h5.entry-title:hover,
+.editor-styles-wrapper h5.entry-title:focus,
+.editor-styles-wrapper h5.entry-title:focus-within {
+  background: initial;
+  color: initial;
+  border: initial;
+}
 body.dfr h5:hover:has(a), body.dfr h5:hover:has(a) > *, body.dfr h5:focus:has(a), body.dfr h5:focus:has(a) > *, body.dfr h5:focus-within:has(a), body.dfr h5:focus-within:has(a) > *, body.dfr h5.wp-block-post-title:hover:has(a), body.dfr h5.wp-block-post-title:hover:has(a) > *, body.dfr h5.wp-block-post-title:focus:has(a), body.dfr h5.wp-block-post-title:focus:has(a) > *, body.dfr h5.wp-block-post-title:focus-within:has(a), body.dfr h5.wp-block-post-title:focus-within:has(a) > *, body.dfr h5.entry-title:hover:has(a), body.dfr h5.entry-title:hover:has(a) > *, body.dfr h5.entry-title:focus:has(a), body.dfr h5.entry-title:focus:has(a) > *, body.dfr h5.entry-title:focus-within:has(a), body.dfr h5.entry-title:focus-within:has(a) > *,
 .editor-styles-wrapper h5:hover:has(a),
 .editor-styles-wrapper h5:hover:has(a) > *,
@@ -271,6 +341,20 @@ body.dfr h6, body.dfr h6 > *, body.dfr h6.wp-block-post-title, body.dfr h6.wp-bl
   color: var(--dfr-primary-color, "#113946");
   transition: color 0.2s ease-in-out;
 }
+body.dfr h6:hover, body.dfr h6:focus, body.dfr h6:focus-within, body.dfr h6.wp-block-post-title:hover, body.dfr h6.wp-block-post-title:focus, body.dfr h6.wp-block-post-title:focus-within, body.dfr h6.entry-title:hover, body.dfr h6.entry-title:focus, body.dfr h6.entry-title:focus-within,
+.editor-styles-wrapper h6:hover,
+.editor-styles-wrapper h6:focus,
+.editor-styles-wrapper h6:focus-within,
+.editor-styles-wrapper h6.wp-block-post-title:hover,
+.editor-styles-wrapper h6.wp-block-post-title:focus,
+.editor-styles-wrapper h6.wp-block-post-title:focus-within,
+.editor-styles-wrapper h6.entry-title:hover,
+.editor-styles-wrapper h6.entry-title:focus,
+.editor-styles-wrapper h6.entry-title:focus-within {
+  background: initial;
+  color: initial;
+  border: initial;
+}
 body.dfr h6:hover:has(a), body.dfr h6:hover:has(a) > *, body.dfr h6:focus:has(a), body.dfr h6:focus:has(a) > *, body.dfr h6:focus-within:has(a), body.dfr h6:focus-within:has(a) > *, body.dfr h6.wp-block-post-title:hover:has(a), body.dfr h6.wp-block-post-title:hover:has(a) > *, body.dfr h6.wp-block-post-title:focus:has(a), body.dfr h6.wp-block-post-title:focus:has(a) > *, body.dfr h6.wp-block-post-title:focus-within:has(a), body.dfr h6.wp-block-post-title:focus-within:has(a) > *, body.dfr h6.entry-title:hover:has(a), body.dfr h6.entry-title:hover:has(a) > *, body.dfr h6.entry-title:focus:has(a), body.dfr h6.entry-title:focus:has(a) > *, body.dfr h6.entry-title:focus-within:has(a), body.dfr h6.entry-title:focus-within:has(a) > *,
 .editor-styles-wrapper h6:hover:has(a),
 .editor-styles-wrapper h6:hover:has(a) > *,
@@ -291,6 +375,10 @@ body.dfr h6:hover:has(a), body.dfr h6:hover:has(a) > *, body.dfr h6:focus:has(a)
 .editor-styles-wrapper h6.entry-title:focus-within:has(a),
 .editor-styles-wrapper h6.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+}
+body.dfr aside[class*=dfr]:not(:first-child),
+.editor-styles-wrapper aside[class*=dfr]:not(:first-child) {
+  margin-block-start: 15px;
 }
 
 /*# sourceMappingURL=adminStyles.css.map */

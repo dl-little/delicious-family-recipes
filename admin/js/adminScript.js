@@ -17,9 +17,7 @@ const updateExistingVar = ( target, value ) => {
 
 inputs.forEach( ( input ) => {
 	input.addEventListener( 'change', function ( e ) {
-		if (
-			! hasExistingVar( '--' + e.target.id.replaceAll( '_', '-' ) )
-		) {
+		if ( ! hasExistingVar( '--' + e.target.id.replaceAll( '_', '-' ) ) ) {
 			return;
 		}
 

@@ -12,28 +12,34 @@ import classnames from 'classnames';
  * @return {Element} Element to render.
  */
 export default function save( props ) {
-
 	const { attributes } = props;
 	const { sortByCount, chosenCategories, popularCategories } = attributes;
 
-	const categories   = !!sortByCount ? popularCategories : chosenCategories
-	const numberOfCols = !!sortByCount ? popularCategories.length : chosenCategories.length;
-	const gridAutoCols = numberOfCols >= 4 ? 'minmax(0, 4fr)' : `minmax(0, ${numberOfCols}fr)`;
+	const categories = !! sortByCount ? popularCategories : chosenCategories;
+	const numberOfCols = !! sortByCount
+		? popularCategories.length
+		: chosenCategories.length;
+	const gridAutoCols =
+		numberOfCols >= 4 ? 'minmax(0, 4fr)' : `minmax(0, ${ numberOfCols }fr)`;
 
 	return (
 		<aside { ...useBlockProps.save() }>
 			<ul
-				style={
-					{
-						'--dfr-item-cols': `${gridAutoCols}`,
-						'--dfr-item-count': `${numberOfCols}`,
-					}
-				}
-				className={ classnames( 'cat-list', numberOfCols > 4 ? ' circle-style' : ' square-style') }
+				style={ {
+					'--dfr-item-cols': `${ gridAutoCols }`,
+					'--dfr-item-count': `${ numberOfCols }`,
+				} }
+				className={ classnames(
+					'cat-list',
+					numberOfCols > 4 ? ' circle-style' : ' square-style'
+				) }
 			>
-				{categories.map( ( category ) =>
-					<SavedListItem category={category} />
-				)}
+				{ categories.map( ( category ) => (
+					<SavedListItem
+						key={ category.value }
+						category={ category }
+					/>
+				) ) }
 			</ul>
 		</aside>
 	);

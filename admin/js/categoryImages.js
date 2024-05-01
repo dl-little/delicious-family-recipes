@@ -2,9 +2,7 @@ let frame,
 	addImageLink = document.getElementById( 'dfr_insert_media_button' ),
 	delImageLink = document.getElementById( 'dfr_delete_media_button' ),
 	imageContainer = document.getElementById( 'dfr_image_container' ),
-	imageIdInput = document.querySelector(
-		'input[type="hidden"].dfr_hidden'
-	),
+	imageIdInput = document.querySelector( 'input[type="hidden"].dfr_hidden' ),
 	catSlug = document
 		.getElementById( 'dfr_image_field' )
 		.getAttribute( 'data-slug' );

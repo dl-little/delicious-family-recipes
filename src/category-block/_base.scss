@@ -22,6 +22,9 @@
     }
 
     li.cat-item {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
       padding-top: 100%;
       position: relative;
 
@@ -47,6 +50,10 @@
         }
 
         @include hovered {
+          background: initial;
+          border: initial;
+          color: initial;
+
           span.cat-span {
             background: $secondary;
           }
@@ -112,6 +119,10 @@
           }
 
           @include hovered {
+            background: initial;
+            border: initial;
+            color: initial;
+
             img.cat-img {
               box-shadow: $hovered-box-shadow;
             }
