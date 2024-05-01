@@ -1,5 +1,4 @@
 @import '../../../scss/abstracts';
-@import '../../../scss/base';
 
 div.dfr-recent-posts {
   ul.wp-block-post-template {
@@ -65,6 +64,10 @@ div.dfr-recent-posts {
             }
           }
         }
+      }
+
+      @include hovered {
+        box-shadow: $hovered-box-shadow;
       }
     }
   }

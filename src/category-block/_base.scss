@@ -1,5 +1,4 @@
 @import '../../scss/abstracts';
-@import '../../scss/base';
 
 .wp-block-dfr-category {
   width: 100%;
@@ -50,9 +49,6 @@
         }
 
         @include hovered {
-          background: initial;
-          border: initial;
-          color: initial;
 
           span.cat-span {
             background: $secondary;
@@ -119,9 +115,6 @@
           }
 
           @include hovered {
-            background: initial;
-            border: initial;
-            color: initial;
 
             img.cat-img {
               box-shadow: $hovered-box-shadow;

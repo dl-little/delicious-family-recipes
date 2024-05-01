@@ -1,5 +1,4 @@
 @import '../../../scss/abstracts';
-@import '../../../scss/base';
 
 .dfr-single-post {
   ul.wp-block-post-template {
@@ -36,6 +35,11 @@
       div.wp-block-post-excerpt {
         p.wp-block-post-excerpt__more-text {
           & > a {
+
+            @include hovered {
+              box-shadow: -2px 2px 0px 0px $primary;
+            }
+
             @include button-styles(
               $primary,
               $secondary,
@@ -43,11 +47,8 @@
               $double-gap,
               $large-button-padding
             );
+
             box-shadow: -2px 2px 0px 0px $secondary;
-    
-            @include hovered {
-              box-shadow: -2px 2px 0px 0px $primary;
-            }
           }
         }
       }
