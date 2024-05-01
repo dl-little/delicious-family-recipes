@@ -24,8 +24,15 @@ body.dfr,
       @include hovered {
         &:has(a), &:has(a) > * {
           color: $secondary;
+          background: initial;
         }
       }
+    }
+  }
+
+  figure img, a img {
+    @include hovered {
+      opacity: initial;
     }
   }
 

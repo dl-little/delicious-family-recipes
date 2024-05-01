@@ -101,6 +101,7 @@ body.dfr h1:hover:has(a), body.dfr h1:hover:has(a) > *, body.dfr h1:focus:has(a)
 .editor-styles-wrapper h1.entry-title:focus-within:has(a),
 .editor-styles-wrapper h1.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+  background: initial;
 }
 body.dfr h2, body.dfr h2.wp-block-post-title, body.dfr h2.entry-title,
 .editor-styles-wrapper h2,
@@ -139,6 +140,7 @@ body.dfr h2:hover:has(a), body.dfr h2:hover:has(a) > *, body.dfr h2:focus:has(a)
 .editor-styles-wrapper h2.entry-title:focus-within:has(a),
 .editor-styles-wrapper h2.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+  background: initial;
 }
 body.dfr h3, body.dfr h3.wp-block-post-title, body.dfr h3.entry-title,
 .editor-styles-wrapper h3,
@@ -177,6 +179,7 @@ body.dfr h3:hover:has(a), body.dfr h3:hover:has(a) > *, body.dfr h3:focus:has(a)
 .editor-styles-wrapper h3.entry-title:focus-within:has(a),
 .editor-styles-wrapper h3.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+  background: initial;
 }
 body.dfr h4, body.dfr h4.wp-block-post-title, body.dfr h4.entry-title,
 .editor-styles-wrapper h4,
@@ -215,6 +218,7 @@ body.dfr h4:hover:has(a), body.dfr h4:hover:has(a) > *, body.dfr h4:focus:has(a)
 .editor-styles-wrapper h4.entry-title:focus-within:has(a),
 .editor-styles-wrapper h4.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+  background: initial;
 }
 body.dfr h5, body.dfr h5.wp-block-post-title, body.dfr h5.entry-title,
 .editor-styles-wrapper h5,
@@ -253,6 +257,7 @@ body.dfr h5:hover:has(a), body.dfr h5:hover:has(a) > *, body.dfr h5:focus:has(a)
 .editor-styles-wrapper h5.entry-title:focus-within:has(a),
 .editor-styles-wrapper h5.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+  background: initial;
 }
 body.dfr h6, body.dfr h6.wp-block-post-title, body.dfr h6.entry-title,
 .editor-styles-wrapper h6,
@@ -291,6 +296,16 @@ body.dfr h6:hover:has(a), body.dfr h6:hover:has(a) > *, body.dfr h6:focus:has(a)
 .editor-styles-wrapper h6.entry-title:focus-within:has(a),
 .editor-styles-wrapper h6.entry-title:focus-within:has(a) > * {
   color: var(--dfr-secondary-color, "#BCA37F");
+  background: initial;
+}
+body.dfr figure img:hover, body.dfr figure img:focus, body.dfr figure img:focus-within, body.dfr a img:hover, body.dfr a img:focus, body.dfr a img:focus-within,
+.editor-styles-wrapper figure img:hover,
+.editor-styles-wrapper figure img:focus,
+.editor-styles-wrapper figure img:focus-within,
+.editor-styles-wrapper a img:hover,
+.editor-styles-wrapper a img:focus,
+.editor-styles-wrapper a img:focus-within {
+  opacity: initial;
 }
 body.dfr aside[class*=dfr]:not(:first-child),
 .editor-styles-wrapper aside[class*=dfr]:not(:first-child) {
