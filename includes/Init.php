@@ -61,6 +61,13 @@ class Init {
 	public $featured_posts;
 
 	/**
+	 * Filters instance.
+	 *
+	 * @var ?Filters;
+	 */
+	public $filters;
+
+	/**
 	 * Instantiate class and load subclasses.
 	 *
 	 * @return object class.
@@ -76,6 +83,7 @@ class Init {
 			self::$instance->enqueue        = Enqueue::get_instance();
 			self::$instance->categories     = Categories::get_instance();
 			self::$instance->featured_posts = Featured_Posts::get_instance();
+			self::$instance->filters        = Filters::get_instance();
 		}
 
 		return self::$instance;

@@ -2,8 +2,6 @@
 
 namespace DFR;
 
-use Exception;
-
 if ( class_exists( 'DFR\Init' ) ) {
 	/**
 	 * Fonts is a class that handles fonts.

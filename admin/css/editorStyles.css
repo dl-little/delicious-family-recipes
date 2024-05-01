@@ -311,5 +311,9 @@ body.dfr aside[class*=dfr]:not(:first-child),
 .editor-styles-wrapper aside[class*=dfr]:not(:first-child) {
   margin-block-start: 15px;
 }
+body.dfr.dfr_hidden_title h1,
+.editor-styles-wrapper.dfr_hidden_title h1 {
+  display: none;
+}
 
 /*# sourceMappingURL=editorStyles.css.map */

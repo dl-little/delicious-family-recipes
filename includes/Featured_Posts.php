@@ -4,7 +4,7 @@ namespace DFR;
 
 if ( class_exists( 'DFR\Init' ) ) {
 	/**
-	 * Enqueue is a class that handles enqueuing assets related to query loop extension.
+	 * Featured_Posts is a class that handles enqueuing assets related to query loop extension.
 	 *
 	 * @package Delicious_Family_Recipes
 	 */

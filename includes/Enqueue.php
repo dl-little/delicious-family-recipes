@@ -38,7 +38,6 @@ if ( class_exists( 'DFR\Init' ) ) {
 		 */
 		public function init(): void {
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 10 );
-			add_filter( 'body_class', [ $this, 'add_dfr_body_class' ] );
 			add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_editor_assets' ] );
 		}
 
@@ -48,16 +47,6 @@ if ( class_exists( 'DFR\Init' ) ) {
 		public static function enqueue_scripts(): void {
 			wp_register_style( self::$prefix . 'main_styles', DFR_PLUGIN_URL . 'public/css/main.css' );
 			wp_enqueue_style( self::$prefix . 'main_styles' );
-		}
-
-		/**
-		 * Adds the dfr class to the body element.
-		 *
-		 * @param array $classes classlist of body classes.
-		 */
-		public static function add_dfr_body_class( $classes ): array {
-			$classes[] = self::$slug;
-			return $classes;
 		}
 
 		/**
