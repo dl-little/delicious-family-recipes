@@ -21,8 +21,8 @@ registerBlockVariation( 'core/group', {
 		style: {
 			spacing: {
 				padding: {
-					top: '15px',
-					bottom: '15px',
+					top: '30px',
+					bottom: '30px',
 				},
 			},
 		},
