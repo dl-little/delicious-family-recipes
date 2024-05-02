@@ -10,9 +10,11 @@ body.dfr,
 .editor-styles-wrapper {
   font-size: $body-font-size;
   font-family: $body-font-family;
+  color: $contrast;
 
   @for $i from 1 through 6 {
     h#{$i}, h#{$i}.wp-block-post-title, h#{$i}.entry-title {
+      text-transform: initial;
       font-family: $header-font-family;
       @include fontLevels($i);
   
@@ -44,5 +46,15 @@ body.dfr,
     h1 {
       display: none;
     }
+  }
+
+  *[class*="dfr"] a, a[class*="dfr"] {
+    font-style: initial;
+  }
+
+  .wp-block-button:where(.is-style-outline)>.wp-block-button__link:hover {
+    border: 2px solid;
+    border-bottom: 2px solid;
+    border-bottom-color: initial;
   }
 }

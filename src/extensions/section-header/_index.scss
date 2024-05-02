@@ -1,6 +1,8 @@
 @import '../../../scss/abstracts';
 
 .dfr-section-header {
+  margin-bottom: $gap;
+
   .wp-block-group.is-layout-flex {
     width: 100%;
     align-items: flex-end;

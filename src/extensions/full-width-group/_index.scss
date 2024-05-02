@@ -1,7 +1,9 @@
 @import '../../../scss/abstracts';
 
 body:has(.dfr-full-width-group) {
-  overflow-x: hidden;
+  &, .editor-styles-wrapper {
+    overflow-x: hidden;
+  }
 
   .dfr-full-width-group {
     position: relative;
@@ -17,8 +19,21 @@ body:has(.dfr-full-width-group) {
     }
 
     &.primary-background {
+      color: $white;
+
       &, &::before, &::after {
         background: $primary
+      }
+
+      .wp-block-button .wp-block-button__link {
+        @include button-styles( $transparent, $transparent, $white, 0 );
+
+        &::after {
+          transition: $transition;
+          content: '\2192';
+          margin-left: $half-gap;
+          color: $white;
+        }
       }
     }
 

@@ -63,11 +63,13 @@ body.dfr,
 .editor-styles-wrapper {
   font-size: var(--dfr-body-font-size, 18px);
   font-family: var(--dfr-body-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  color: #000000;
 }
 body.dfr h1, body.dfr h1.wp-block-post-title, body.dfr h1.entry-title,
 .editor-styles-wrapper h1,
 .editor-styles-wrapper h1.wp-block-post-title,
 .editor-styles-wrapper h1.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 2.25em;
 }
@@ -107,6 +109,7 @@ body.dfr h2, body.dfr h2.wp-block-post-title, body.dfr h2.entry-title,
 .editor-styles-wrapper h2,
 .editor-styles-wrapper h2.wp-block-post-title,
 .editor-styles-wrapper h2.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 2em;
 }
@@ -146,6 +149,7 @@ body.dfr h3, body.dfr h3.wp-block-post-title, body.dfr h3.entry-title,
 .editor-styles-wrapper h3,
 .editor-styles-wrapper h3.wp-block-post-title,
 .editor-styles-wrapper h3.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.75em;
 }
@@ -185,6 +189,7 @@ body.dfr h4, body.dfr h4.wp-block-post-title, body.dfr h4.entry-title,
 .editor-styles-wrapper h4,
 .editor-styles-wrapper h4.wp-block-post-title,
 .editor-styles-wrapper h4.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.5em;
 }
@@ -224,6 +229,7 @@ body.dfr h5, body.dfr h5.wp-block-post-title, body.dfr h5.entry-title,
 .editor-styles-wrapper h5,
 .editor-styles-wrapper h5.wp-block-post-title,
 .editor-styles-wrapper h5.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.25em;
 }
@@ -263,6 +269,7 @@ body.dfr h6, body.dfr h6.wp-block-post-title, body.dfr h6.entry-title,
 .editor-styles-wrapper h6,
 .editor-styles-wrapper h6.wp-block-post-title,
 .editor-styles-wrapper h6.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1em;
 }
@@ -314,6 +321,17 @@ body.dfr aside[class*=dfr]:not(:first-child),
 body.dfr.dfr_hidden_title h1,
 .editor-styles-wrapper.dfr_hidden_title h1 {
   display: none;
+}
+body.dfr *[class*=dfr] a, body.dfr a[class*=dfr],
+.editor-styles-wrapper *[class*=dfr] a,
+.editor-styles-wrapper a[class*=dfr] {
+  font-style: initial;
+}
+body.dfr .wp-block-button:where(.is-style-outline) > .wp-block-button__link:hover,
+.editor-styles-wrapper .wp-block-button:where(.is-style-outline) > .wp-block-button__link:hover {
+  border: 2px solid;
+  border-bottom: 2px solid;
+  border-bottom-color: initial;
 }
 
 /*# sourceMappingURL=editorStyles.css.map */
