@@ -63,11 +63,13 @@ body.dfr,
 .editor-styles-wrapper {
   font-size: var(--dfr-body-font-size, 18px);
   font-family: var(--dfr-body-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+  color: #000000;
 }
 body.dfr h1, body.dfr h1.wp-block-post-title, body.dfr h1.entry-title,
 .editor-styles-wrapper h1,
 .editor-styles-wrapper h1.wp-block-post-title,
 .editor-styles-wrapper h1.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 2.25em;
 }
@@ -78,7 +80,7 @@ body.dfr h1, body.dfr h1 > *, body.dfr h1.wp-block-post-title, body.dfr h1.wp-bl
 .editor-styles-wrapper h1.wp-block-post-title > *,
 .editor-styles-wrapper h1.entry-title,
 .editor-styles-wrapper h1.entry-title > * {
-  color: var(--dfr-primary-color, "#113946");
+  color: var(--dfr-primary-color, #113946);
   transition: color 0.2s ease-in-out;
 }
 body.dfr h1:hover:has(a), body.dfr h1:hover:has(a) > *, body.dfr h1:focus:has(a), body.dfr h1:focus:has(a) > *, body.dfr h1:focus-within:has(a), body.dfr h1:focus-within:has(a) > *, body.dfr h1.wp-block-post-title:hover:has(a), body.dfr h1.wp-block-post-title:hover:has(a) > *, body.dfr h1.wp-block-post-title:focus:has(a), body.dfr h1.wp-block-post-title:focus:has(a) > *, body.dfr h1.wp-block-post-title:focus-within:has(a), body.dfr h1.wp-block-post-title:focus-within:has(a) > *, body.dfr h1.entry-title:hover:has(a), body.dfr h1.entry-title:hover:has(a) > *, body.dfr h1.entry-title:focus:has(a), body.dfr h1.entry-title:focus:has(a) > *, body.dfr h1.entry-title:focus-within:has(a), body.dfr h1.entry-title:focus-within:has(a) > *,
@@ -100,12 +102,14 @@ body.dfr h1:hover:has(a), body.dfr h1:hover:has(a) > *, body.dfr h1:focus:has(a)
 .editor-styles-wrapper h1.entry-title:focus:has(a) > *,
 .editor-styles-wrapper h1.entry-title:focus-within:has(a),
 .editor-styles-wrapper h1.entry-title:focus-within:has(a) > * {
-  color: var(--dfr-secondary-color, "#BCA37F");
+  color: var(--dfr-secondary-color, #BCA37F);
+  background: initial;
 }
 body.dfr h2, body.dfr h2.wp-block-post-title, body.dfr h2.entry-title,
 .editor-styles-wrapper h2,
 .editor-styles-wrapper h2.wp-block-post-title,
 .editor-styles-wrapper h2.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 2em;
 }
@@ -116,7 +120,7 @@ body.dfr h2, body.dfr h2 > *, body.dfr h2.wp-block-post-title, body.dfr h2.wp-bl
 .editor-styles-wrapper h2.wp-block-post-title > *,
 .editor-styles-wrapper h2.entry-title,
 .editor-styles-wrapper h2.entry-title > * {
-  color: var(--dfr-primary-color, "#113946");
+  color: var(--dfr-primary-color, #113946);
   transition: color 0.2s ease-in-out;
 }
 body.dfr h2:hover:has(a), body.dfr h2:hover:has(a) > *, body.dfr h2:focus:has(a), body.dfr h2:focus:has(a) > *, body.dfr h2:focus-within:has(a), body.dfr h2:focus-within:has(a) > *, body.dfr h2.wp-block-post-title:hover:has(a), body.dfr h2.wp-block-post-title:hover:has(a) > *, body.dfr h2.wp-block-post-title:focus:has(a), body.dfr h2.wp-block-post-title:focus:has(a) > *, body.dfr h2.wp-block-post-title:focus-within:has(a), body.dfr h2.wp-block-post-title:focus-within:has(a) > *, body.dfr h2.entry-title:hover:has(a), body.dfr h2.entry-title:hover:has(a) > *, body.dfr h2.entry-title:focus:has(a), body.dfr h2.entry-title:focus:has(a) > *, body.dfr h2.entry-title:focus-within:has(a), body.dfr h2.entry-title:focus-within:has(a) > *,
@@ -138,12 +142,14 @@ body.dfr h2:hover:has(a), body.dfr h2:hover:has(a) > *, body.dfr h2:focus:has(a)
 .editor-styles-wrapper h2.entry-title:focus:has(a) > *,
 .editor-styles-wrapper h2.entry-title:focus-within:has(a),
 .editor-styles-wrapper h2.entry-title:focus-within:has(a) > * {
-  color: var(--dfr-secondary-color, "#BCA37F");
+  color: var(--dfr-secondary-color, #BCA37F);
+  background: initial;
 }
 body.dfr h3, body.dfr h3.wp-block-post-title, body.dfr h3.entry-title,
 .editor-styles-wrapper h3,
 .editor-styles-wrapper h3.wp-block-post-title,
 .editor-styles-wrapper h3.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.75em;
 }
@@ -154,7 +160,7 @@ body.dfr h3, body.dfr h3 > *, body.dfr h3.wp-block-post-title, body.dfr h3.wp-bl
 .editor-styles-wrapper h3.wp-block-post-title > *,
 .editor-styles-wrapper h3.entry-title,
 .editor-styles-wrapper h3.entry-title > * {
-  color: var(--dfr-primary-color, "#113946");
+  color: var(--dfr-primary-color, #113946);
   transition: color 0.2s ease-in-out;
 }
 body.dfr h3:hover:has(a), body.dfr h3:hover:has(a) > *, body.dfr h3:focus:has(a), body.dfr h3:focus:has(a) > *, body.dfr h3:focus-within:has(a), body.dfr h3:focus-within:has(a) > *, body.dfr h3.wp-block-post-title:hover:has(a), body.dfr h3.wp-block-post-title:hover:has(a) > *, body.dfr h3.wp-block-post-title:focus:has(a), body.dfr h3.wp-block-post-title:focus:has(a) > *, body.dfr h3.wp-block-post-title:focus-within:has(a), body.dfr h3.wp-block-post-title:focus-within:has(a) > *, body.dfr h3.entry-title:hover:has(a), body.dfr h3.entry-title:hover:has(a) > *, body.dfr h3.entry-title:focus:has(a), body.dfr h3.entry-title:focus:has(a) > *, body.dfr h3.entry-title:focus-within:has(a), body.dfr h3.entry-title:focus-within:has(a) > *,
@@ -176,12 +182,14 @@ body.dfr h3:hover:has(a), body.dfr h3:hover:has(a) > *, body.dfr h3:focus:has(a)
 .editor-styles-wrapper h3.entry-title:focus:has(a) > *,
 .editor-styles-wrapper h3.entry-title:focus-within:has(a),
 .editor-styles-wrapper h3.entry-title:focus-within:has(a) > * {
-  color: var(--dfr-secondary-color, "#BCA37F");
+  color: var(--dfr-secondary-color, #BCA37F);
+  background: initial;
 }
 body.dfr h4, body.dfr h4.wp-block-post-title, body.dfr h4.entry-title,
 .editor-styles-wrapper h4,
 .editor-styles-wrapper h4.wp-block-post-title,
 .editor-styles-wrapper h4.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.5em;
 }
@@ -192,7 +200,7 @@ body.dfr h4, body.dfr h4 > *, body.dfr h4.wp-block-post-title, body.dfr h4.wp-bl
 .editor-styles-wrapper h4.wp-block-post-title > *,
 .editor-styles-wrapper h4.entry-title,
 .editor-styles-wrapper h4.entry-title > * {
-  color: var(--dfr-primary-color, "#113946");
+  color: var(--dfr-primary-color, #113946);
   transition: color 0.2s ease-in-out;
 }
 body.dfr h4:hover:has(a), body.dfr h4:hover:has(a) > *, body.dfr h4:focus:has(a), body.dfr h4:focus:has(a) > *, body.dfr h4:focus-within:has(a), body.dfr h4:focus-within:has(a) > *, body.dfr h4.wp-block-post-title:hover:has(a), body.dfr h4.wp-block-post-title:hover:has(a) > *, body.dfr h4.wp-block-post-title:focus:has(a), body.dfr h4.wp-block-post-title:focus:has(a) > *, body.dfr h4.wp-block-post-title:focus-within:has(a), body.dfr h4.wp-block-post-title:focus-within:has(a) > *, body.dfr h4.entry-title:hover:has(a), body.dfr h4.entry-title:hover:has(a) > *, body.dfr h4.entry-title:focus:has(a), body.dfr h4.entry-title:focus:has(a) > *, body.dfr h4.entry-title:focus-within:has(a), body.dfr h4.entry-title:focus-within:has(a) > *,
@@ -214,12 +222,14 @@ body.dfr h4:hover:has(a), body.dfr h4:hover:has(a) > *, body.dfr h4:focus:has(a)
 .editor-styles-wrapper h4.entry-title:focus:has(a) > *,
 .editor-styles-wrapper h4.entry-title:focus-within:has(a),
 .editor-styles-wrapper h4.entry-title:focus-within:has(a) > * {
-  color: var(--dfr-secondary-color, "#BCA37F");
+  color: var(--dfr-secondary-color, #BCA37F);
+  background: initial;
 }
 body.dfr h5, body.dfr h5.wp-block-post-title, body.dfr h5.entry-title,
 .editor-styles-wrapper h5,
 .editor-styles-wrapper h5.wp-block-post-title,
 .editor-styles-wrapper h5.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1.25em;
 }
@@ -230,7 +240,7 @@ body.dfr h5, body.dfr h5 > *, body.dfr h5.wp-block-post-title, body.dfr h5.wp-bl
 .editor-styles-wrapper h5.wp-block-post-title > *,
 .editor-styles-wrapper h5.entry-title,
 .editor-styles-wrapper h5.entry-title > * {
-  color: var(--dfr-primary-color, "#113946");
+  color: var(--dfr-primary-color, #113946);
   transition: color 0.2s ease-in-out;
 }
 body.dfr h5:hover:has(a), body.dfr h5:hover:has(a) > *, body.dfr h5:focus:has(a), body.dfr h5:focus:has(a) > *, body.dfr h5:focus-within:has(a), body.dfr h5:focus-within:has(a) > *, body.dfr h5.wp-block-post-title:hover:has(a), body.dfr h5.wp-block-post-title:hover:has(a) > *, body.dfr h5.wp-block-post-title:focus:has(a), body.dfr h5.wp-block-post-title:focus:has(a) > *, body.dfr h5.wp-block-post-title:focus-within:has(a), body.dfr h5.wp-block-post-title:focus-within:has(a) > *, body.dfr h5.entry-title:hover:has(a), body.dfr h5.entry-title:hover:has(a) > *, body.dfr h5.entry-title:focus:has(a), body.dfr h5.entry-title:focus:has(a) > *, body.dfr h5.entry-title:focus-within:has(a), body.dfr h5.entry-title:focus-within:has(a) > *,
@@ -252,12 +262,14 @@ body.dfr h5:hover:has(a), body.dfr h5:hover:has(a) > *, body.dfr h5:focus:has(a)
 .editor-styles-wrapper h5.entry-title:focus:has(a) > *,
 .editor-styles-wrapper h5.entry-title:focus-within:has(a),
 .editor-styles-wrapper h5.entry-title:focus-within:has(a) > * {
-  color: var(--dfr-secondary-color, "#BCA37F");
+  color: var(--dfr-secondary-color, #BCA37F);
+  background: initial;
 }
 body.dfr h6, body.dfr h6.wp-block-post-title, body.dfr h6.entry-title,
 .editor-styles-wrapper h6,
 .editor-styles-wrapper h6.wp-block-post-title,
 .editor-styles-wrapper h6.entry-title {
+  text-transform: initial;
   font-family: var(--dfr-header-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
   font-size: 1em;
 }
@@ -268,7 +280,7 @@ body.dfr h6, body.dfr h6 > *, body.dfr h6.wp-block-post-title, body.dfr h6.wp-bl
 .editor-styles-wrapper h6.wp-block-post-title > *,
 .editor-styles-wrapper h6.entry-title,
 .editor-styles-wrapper h6.entry-title > * {
-  color: var(--dfr-primary-color, "#113946");
+  color: var(--dfr-primary-color, #113946);
   transition: color 0.2s ease-in-out;
 }
 body.dfr h6:hover:has(a), body.dfr h6:hover:has(a) > *, body.dfr h6:focus:has(a), body.dfr h6:focus:has(a) > *, body.dfr h6:focus-within:has(a), body.dfr h6:focus-within:has(a) > *, body.dfr h6.wp-block-post-title:hover:has(a), body.dfr h6.wp-block-post-title:hover:has(a) > *, body.dfr h6.wp-block-post-title:focus:has(a), body.dfr h6.wp-block-post-title:focus:has(a) > *, body.dfr h6.wp-block-post-title:focus-within:has(a), body.dfr h6.wp-block-post-title:focus-within:has(a) > *, body.dfr h6.entry-title:hover:has(a), body.dfr h6.entry-title:hover:has(a) > *, body.dfr h6.entry-title:focus:has(a), body.dfr h6.entry-title:focus:has(a) > *, body.dfr h6.entry-title:focus-within:has(a), body.dfr h6.entry-title:focus-within:has(a) > *,
@@ -290,11 +302,36 @@ body.dfr h6:hover:has(a), body.dfr h6:hover:has(a) > *, body.dfr h6:focus:has(a)
 .editor-styles-wrapper h6.entry-title:focus:has(a) > *,
 .editor-styles-wrapper h6.entry-title:focus-within:has(a),
 .editor-styles-wrapper h6.entry-title:focus-within:has(a) > * {
-  color: var(--dfr-secondary-color, "#BCA37F");
+  color: var(--dfr-secondary-color, #BCA37F);
+  background: initial;
+}
+body.dfr figure img:hover, body.dfr figure img:focus, body.dfr figure img:focus-within, body.dfr a img:hover, body.dfr a img:focus, body.dfr a img:focus-within,
+.editor-styles-wrapper figure img:hover,
+.editor-styles-wrapper figure img:focus,
+.editor-styles-wrapper figure img:focus-within,
+.editor-styles-wrapper a img:hover,
+.editor-styles-wrapper a img:focus,
+.editor-styles-wrapper a img:focus-within {
+  opacity: initial;
 }
 body.dfr aside[class*=dfr]:not(:first-child),
 .editor-styles-wrapper aside[class*=dfr]:not(:first-child) {
   margin-block-start: 15px;
+}
+body.dfr.dfr_hidden_title h1,
+.editor-styles-wrapper.dfr_hidden_title h1 {
+  display: none;
+}
+body.dfr *[class*=dfr] a, body.dfr a[class*=dfr],
+.editor-styles-wrapper *[class*=dfr] a,
+.editor-styles-wrapper a[class*=dfr] {
+  font-style: initial;
+}
+body.dfr .wp-block-button:where(.is-style-outline) > .wp-block-button__link:hover,
+.editor-styles-wrapper .wp-block-button:where(.is-style-outline) > .wp-block-button__link:hover {
+  border: 2px solid;
+  border-bottom: 2px solid;
+  border-bottom-color: initial;
 }
 
 /*# sourceMappingURL=main.css.map */
