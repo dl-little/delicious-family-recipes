@@ -19,13 +19,8 @@
 		"start": "wp-scripts start",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
-		"build:admin": "sass ./scss/adminStyles.scss ./admin/css/adminStyles.css",
-		"watch:admin": "sass --watch ./scss/adminStyles.scss ./admin/css/adminStyles.css",
-		"build:editor": "sass ./scss/editorStyles.scss ./admin/css/editorStyles.css",
-		"watch:editor": "sass --watch ./scss/editorStyles.scss ./admin/css/editorStyles.scss",
-		"watch:main": "sass --watch ./scss/main.scss ./public/css/main.css",
-		"build:main": "sass ./scss/main.scss ./public/css/main.css",
-		"build:scss": "npm run build:admin && npm run build:editor && npm run build:main",
+		"watch:scss": "sass --watch ./scss/adminStyles.scss:./admin/css/adminStyles.css ./scss/editorStyles.scss:./admin/css/editorStyles.css ./scss/main.scss:./public/css/main.css",
+		"build:scss": "sass ./scss/adminStyles.scss:./admin/css/adminStyles.css ./scss/editorStyles.scss:./admin/css/editorStyles.css ./scss/main.scss:./public/css/main.css",
 		"zip-for-prod": "npm run build:scss && npm run build && rm -rf zip && mkdir -p 'zip' && npm run plugin-zip"
 	},
 	"dependencies": {
