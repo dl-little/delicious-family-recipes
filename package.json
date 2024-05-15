@@ -17,8 +17,6 @@
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "zip -r zip/delicious-family-recipes.zip . -x '*.lock' -x 'webpack.*' -x '*.md' -x '*.scss' -x '*.gitignore' -x ./zip/ -x 'node_modules/*' -x '.git/*'",
 		"start": "wp-scripts start",
-		"test:e2e": "wp-scripts test-e2e",
-		"test:unit": "wp-scripts test-unit-js",
 		"watch:scss": "sass --watch ./scss/adminStyles.scss:./admin/css/adminStyles.css ./scss/editorStyles.scss:./admin/css/editorStyles.css ./scss/main.scss:./public/css/main.css",
 		"build:scss": "sass ./scss/adminStyles.scss:./admin/css/adminStyles.css ./scss/editorStyles.scss:./admin/css/editorStyles.css ./scss/main.scss:./public/css/main.css",
 		"zip-for-prod": "npm run build:scss && npm run build && rm -rf zip && mkdir -p 'zip' && npm run plugin-zip"
