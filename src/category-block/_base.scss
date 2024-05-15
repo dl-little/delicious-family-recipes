@@ -46,6 +46,7 @@
           max-width: calc( 100% - $half-gap );
           word-wrap: break-word;
           font-family: $header-font-family;
+          z-index: 1;
         }
 
         @include hovered {
