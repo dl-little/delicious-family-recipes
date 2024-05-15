@@ -1,4 +1,4 @@
-## delicious-family-recipes
+## Delicious Family Recipes
 
 This is a plugin that uses the WordPress settings API to create a custom admin page under 'Appearance' in the dashboard. This plugin also creates a custom 'Category Query' block, and it provides several extensions of core blocks:
 ![Screenshot of the available custom blocks in the editor.](./images/recent-posts.png?raw=true "Delicious Family Recipes blocks")
